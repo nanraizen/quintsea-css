@@ -1,0 +1,49 @@
+{
+	"name": "quintsea-css",
+	"version": "0.2.0",
+	"description": "A CSS framework built around five aesthetics (4+1), which includes Minimalism (+ dark mode), Neubrutalism, Flat and Retro UI Design.",
+	"keywords": [
+		"css",
+		"css-framework",
+		"flatui",
+		"dark-mode",
+		"minimalism",
+		"retroui",
+		"neubrutalism",
+		"neobrutalism"
+	],
+	"author": "Nanraizen",
+	"license": "MIT",
+	"homepage": "https://quintsea.nanraizen.me",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nanraizen/quintsea-css.git"
+	},
+	"bugs": {
+		"url": "https://github.com/nanraizen/quintsea-css/issues"
+	},
+	"main": "js/quintsea.js",
+	"style": "css/quintsea.css",
+	"files": [
+		"css",
+		"js"
+	],
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"version": "npm version",
+		"compile": "postcss src/css/*.css --dir css",
+		"compile:addons": "postcss src/css/addons/*.css --dir css/addons",
+		"compile:themes": "postcss src/css/themes/*.css --dir css/themes",
+		"minify": "cleancss css/!(*.min).css --batch --batch-suffix \".min\"",
+		"minify:addons": "cleancss css/addons/!(*.min).css --batch --batch-suffix \".min\"",
+		"minify:themes": "cleancss css/themes/!(*.min).css --batch --batch-suffix \".min\"",
+		"build": "npm run compile && npm run minify && npm run compile:themes && npm run minify:themes && npm run compile:addons && npm run minify:addons"
+	},
+	"devDependencies": {
+		"clean-css-cli": "^5.6.3",
+		"postcss": "^8.5.6",
+		"postcss-cli": "^11.0.1",
+		"postcss-header": "^3.0.3",
+		"postcss-import": "^16.1.1"
+	}
+}
