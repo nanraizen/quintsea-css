@@ -1,0 +1,97 @@
+.card {
+    padding: 20px 24px;
+    background-color: var(--card);
+    border: var(--stroke) solid var(--mono-30);
+    border-radius: var(--radius-lg);
+}
+
+.cardset {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    border: var(--stroke) solid var(--mono-30);
+    border-radius: var(--radius-lg);
+}
+
+.cardset.divider,
+.cardset[class*=gap-] {
+    border-width: 0;
+}
+
+.cardset .card {
+    border-width: 0;
+    border-radius: 0;
+}
+
+.cardset .card:nth-child(n+2) {
+    border-top-width: var(--stroke);
+}
+
+.cardset .card:first-child {
+    border-top-left-radius: var(--radius-lg);
+    border-top-right-radius: var(--radius-lg);
+}
+
+.cardset .card:last-child {
+    border-bottom-right-radius: var(--radius-lg);
+    border-bottom-left-radius: var(--radius-lg);
+}
+
+.cardset.divider .card:first-child {
+    padding-top: 0;
+}
+
+.cardset.divider .card:last-child {
+    padding-bottom: 0;
+}
+
+.cardset.icon .card {
+    display: flex;
+    gap: 16px;
+}
+
+.cardset.icon .card>* {
+    margin: auto 0;
+}
+
+.cardset.icon .card>span {
+    width: 24px;
+    text-align: center;
+}
+
+.cardset.icon .card>div {
+    flex: 1;
+}
+
+.cardset.hover .card:hover {
+    background-color: var(--mono-05);
+}
+
+.cardset[class*=gap-] .card {
+    margin: 0 !important;
+    transition: var(--ease);
+    border-width: var(--stroke);
+    border-radius: var(--radius-lg);
+}
+
+.cardset[class*=gap-].hover .card:hover {
+    box-shadow: 0 0 0 var(--stroke) var(--primary);
+    background-color: unset;
+    border-color: var(--primary);
+}
+
+.cardset.thumbnail .card {
+    overflow: hidden;
+    padding: 24px;
+}
+
+.cardset.thumbnail .card .img-th {
+    border-radius: var(--radius-md);
+}
+
+.cardset.thumbnail .card .img-th+* {
+    margin-top: 24px;
+}
+
+.cardset.thumbnail .card.flex .img-th+* {
+    margin-top: unset;
+}

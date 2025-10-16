@@ -1,0 +1,125 @@
+.tooltip-text {
+    --x: 0;
+    --y: 0;
+    box-shadow: var(--shadow-sm);
+    overflow-wrap: break-word;
+    backdrop-filter: blur(2px);
+    pointer-events: none;
+    will-change: transform, opacity;
+    position: absolute;
+    z-index: 999;
+    opacity: 0;
+    transform: translate(var(--x), var(--y));
+    width: max-content;
+    max-width: 240px;
+    padding: 8px 12px;
+    transition: opacity .2s var(--cubic), transform .2s var(--cubic);
+    background: var(--tooltip);
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    font-weight: var(--font-regular);
+    line-height: 1.4;
+    color: var(--text-reverse);
+    text-align: center;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.tooltip-text.show {
+    --x: 0;
+    --y: 0;
+    opacity: 1;
+}
+
+[data-tooltip-text] {
+    position: relative;
+    overflow: unset;
+}
+
+[data-tooltip-text-position="top"] .tooltip-text {
+    --x: -50%;
+    bottom: 100%;
+    left: 50%;
+}
+
+[data-tooltip-text-position="top-left"] .tooltip-text {
+    bottom: 100%;
+    left: 0;
+}
+
+[data-tooltip-text-position="top-right"] .tooltip-text {
+    bottom: 100%;
+    right: 0;
+}
+
+[data-tooltip-text-position="bottom"] .tooltip-text {
+    --x: -50%;
+    top: 100%;
+    left: 50%;
+}
+
+[data-tooltip-text-position="bottom-left"] .tooltip-text {
+    top: 100%;
+    left: 0;
+}
+
+[data-tooltip-text-position="bottom-right"] .tooltip-text {
+    top: 100%;
+    right: 0;
+}
+
+[data-tooltip-text-position="left"] .tooltip-text {
+    --y: -50%;
+    top: 50%;
+    right: 100%;
+}
+
+[data-tooltip-text-position="left-top"] .tooltip-text {
+    top: 0;
+    right: 100%;
+}
+
+[data-tooltip-text-position="left-bottom"] .tooltip-text {
+    bottom: 0;
+    right: 100%;
+}
+
+[data-tooltip-text-position="right"] .tooltip-text {
+    --y: -50%;
+    top: 50%;
+    left: 100%;
+}
+
+[data-tooltip-text-position="right-top"] .tooltip-text {
+    top: 0;
+    left: 100%;
+}
+
+[data-tooltip-text-position="right-bottom"] .tooltip-text {
+    bottom: 0;
+    left: 100%;
+}
+
+[data-tooltip-text-position="top"] .tooltip-text.show,
+[data-tooltip-text-position="top-left"] .tooltip-text.show,
+[data-tooltip-text-position="top-right"] .tooltip-text.show {
+    --y: -8px;
+}
+
+[data-tooltip-text-position="bottom"] .tooltip-text.show,
+[data-tooltip-text-position="bottom-left"] .tooltip-text.show,
+[data-tooltip-text-position="bottom-right"] .tooltip-text.show {
+    --y: 8px;
+}
+
+[data-tooltip-text-position="left"] .tooltip-text.show,
+[data-tooltip-text-position="left-top"] .tooltip-text.show,
+[data-tooltip-text-position="left-bottom"] .tooltip-text.show {
+    --x: -8px;
+}
+
+[data-tooltip-text-position="right"] .tooltip-text.show,
+[data-tooltip-text-position="right-top"] .tooltip-text.show,
+[data-tooltip-text-position="right-bottom"] .tooltip-text.show {
+    --x: 8px;
+}

@@ -1,0 +1,17 @@
+[data-theme-trigger=toggle] .dark-off {
+    display: inherit !important;
+}
+
+[data-theme-trigger=toggle] .dark-on {
+    display: none !important;
+}
+
+[data-theme=dark] [data-theme-trigger=toggle]>*:nth-child(1),
+[data-theme-trigger=toggle]>*:nth-child(2) {
+    display: none !important;
+}
+
+[data-theme-trigger=toggle]>*:nth-child(1),
+[data-theme=dark] [data-theme-trigger=toggle]>*:nth-child(2) {
+    display: inherit !important;
+}

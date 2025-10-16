@@ -1,0 +1,38 @@
+.img-cover {
+    position: relative;
+    overflow: hidden;
+}
+
+.img-cover img,
+img.img-cover {
+    object-fit: cover;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.img-th {
+    box-shadow: var(--shadow-sm);
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-xl);
+}
+
+.img-th::before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    z-index: 9;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: var(--ease);
+    background-color: var(--backdrop);
+}
+
+.img-th:hover::before {
+    opacity: .25;
+}

@@ -1,0 +1,50 @@
+.breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 14px;
+    line-height: 1;
+    list-style: none;
+}
+
+.breadcrumbs>li {
+    flex-shrink: 1;
+    position: relative;
+    overflow: hidden;
+    max-width: 240px;
+    margin: auto 0;
+    padding: 2px 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.breadcrumbs>li .glyph {
+    font-variation-settings: 'FILL'1;
+    display: flex;
+    font-size: 20px;
+}
+
+.breadcrumbs>li:last-child:not(:first-child) {
+    pointer-events: none;
+    font-weight: var(--font-semibold);
+}
+
+.breadcrumbs>li:nth-child(n+2) {
+    padding-left: 28px;
+}
+
+.breadcrumbs>li+li:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 16px;
+    margin: auto 0;
+    background-image: var(--icon-chevron-right);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+    font-weight: var(--font-regular);
+    color: var(--mono-40);
+}

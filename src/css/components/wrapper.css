@@ -1,0 +1,22 @@
+.wrapper {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    min-height: 240px;
+}
+
+.wrapper-left,
+.wrapper-right {
+    width: 100%;
+    max-width: unset;
+}
+
+.wrapper-left.wide,
+.wrapper-right.wide {
+    grid-column: span 2;
+}
+
+.wrapper [class*=wrapper-]:only-child {
+    padding: 0;
+    border: 0;
+}

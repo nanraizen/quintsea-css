@@ -1,0 +1,101 @@
+.flex,
+.group {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 0;
+}
+
+.flex-v {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-width: 0;
+}
+
+.flex-0 {
+    flex: unset !important;
+}
+
+.flex-1 {
+    flex: 1 !important;
+}
+
+.flex fieldset,
+.flex .floating-label,
+.flex-v fieldset,
+.flex-v .floating-label {
+    margin: 0 !important;
+}
+
+.group {
+    width: fit-content;
+}
+
+.group>label {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border: var(--stroke) solid var(--mono-30);
+    border-radius: var(--radius-md);
+    font-weight: initial;
+    line-height: 1;
+}
+
+.group>*:not(:first-child):not(:last-child) {
+    border-radius: 0;
+}
+
+.group:not(.btn-o)>*:first-child,
+.group:not(.btn-o)>*:first-child>* {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.group:not(.btn-o)>*:last-child,
+.group:not(.btn-o)>*:last-child>* {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.group>.btn-o:nth-child(n+2),
+.group>input:nth-child(n+2),
+.group>select:nth-child(n+2),
+.group>label:nth-child(n+2),
+.group>.floating-label:nth-child(n+2) {
+    margin-left: var(--stroke-min) !important;
+}
+
+.group>*:hover {
+    z-index: 1;
+}
+
+.group>*:focus,
+.group>*:focus-within {
+    z-index: 2;
+}
+
+.group.btn-o {
+    gap: 2px;
+    padding: 2px;
+    border: 2px solid var(--color);
+    border-radius: calc(var(--radius-md) + 4px);
+}
+
+.group.btn-o.btn-p {
+    border-radius: 99px;
+}
+
+.underline .group label {
+    border-top-width: 0;
+    border-right-width: 0;
+    border-left-width: 0;
+    border-radius: 0;
+}
+
+.underline .group>label:last-child {
+    padding-right: 0;
+}
+
+.underline .group>label:first-child {
+    padding-left: 0;
+}

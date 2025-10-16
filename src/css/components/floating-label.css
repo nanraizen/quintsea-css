@@ -1,0 +1,66 @@
+.floating-label>*:not(label) {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.floating-label label {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 16px;
+    opacity: 1;
+    transform: translateX(0);
+    height: 48px;
+    margin-left: 1px;
+    padding: 4px;
+    transition: opacity .2s var(--cubic), transform .2s var(--cubic);
+    font-weight: var(--font-regular) !important;
+    line-height: 1.2;
+}
+
+.floating-label label:not(.clone) {
+    color: var(--mono-50) !important;
+}
+
+.floating-label label.clone {
+    z-index: 1;
+    top: -10px;
+    opacity: 0;
+    transform: translateX(20px);
+    height: auto;
+    background-color: var(--card);
+    border-radius: 4px !important;
+    font-size: 12px;
+    line-height: 1;
+    color: var(--mono-50);
+}
+
+.floating-label>*:not(label)::placeholder {
+    color: transparent;
+}
+
+.floating-label:focus-within label:not(.clone),
+.floating-label>*:not(label):not(:placeholder-shown)+label:not(.clone) {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+.floating-label:focus-within label.clone {
+    color: var(--primary-dark);
+}
+
+.floating-label:focus-within label.clone,
+.floating-label>*:not(label):not(:placeholder-shown)+label+label.clone {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.underline .floating-label label,
+.underline .floating-label label.clone {
+    left: 0;
+    margin-left: 0;
+    padding-right: 0;
+    padding-left: 0;
+}

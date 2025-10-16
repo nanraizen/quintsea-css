@@ -1,0 +1,115 @@
+.collapse,
+[data-accordion=content] {
+    position: relative;
+    opacity: 0;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .2s var(--cubic), opacity .6s ease;
+    font-size: 14px;
+}
+
+[data-collapse=content]>*:not(.card),
+[data-accordion=content]>*:not(.card) {
+    padding-top: 12px;
+}
+
+.collapse.expand,
+[data-accordion=toggle].expand+[data-accordion=content] {
+    opacity: 1;
+    max-height: unset;
+}
+
+[data-accordion=toggle] {
+    display: flex;
+    gap: 12px;
+    min-height: 24px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+[data-accordion=toggle].btn-t {
+    align-items: start;
+    height: unset;
+    padding: unset;
+}
+
+[data-accordion=toggle]::after {
+    content: '';
+    display: flex;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    margin: auto 0;
+    margin-left: auto;
+    transition: transform .2s var(--cubic), height .2s var(--cubic);
+    background-image: var(--icon-chevron-down2);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+[data-accordion=toggle].expand::after {
+    transform: rotate(-180deg);
+}
+
+[data-accordion=toggle] .glyph.hidden,
+[data-accordion=toggle].expand .glyph.hidden+.glyph {
+    display: none;
+}
+
+[data-accordion=toggle].expand .hidden {
+    display: unset;
+}
+
+.accordion hr {
+    margin: 16px 0;
+}
+
+.accordion.plus-caret [data-accordion=toggle]::after {
+    transform: unset;
+    background-image: var(--icon-plus);
+}
+
+.accordion.plus-caret [data-accordion=toggle].expand::after {
+    height: 2px;
+}
+
+.accordion .cardset {
+    overflow: hidden;
+    border-radius: var(--radius-md);
+}
+
+.accordion .cardset .card[data-accordion=toggle] {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.accordion .cardset [data-accordion=content] .card:first-child {
+    border-top-width: var(--stroke);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.accordion:not([class*=gap-]) .cardset:nth-child(n+2) [data-accordion=toggle].card {
+    border-radius: 0;
+}
+
+.accordion:not([class*=gap-]) .cardset:last-child {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.accordion:not([class*=gap-]) .cardset:first-child {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.accordion:not([class*=gap-]) .cardset:nth-child(n+2) {
+    border-top-width: 0;
+}
+
+.accordion[class*=gap-] {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}

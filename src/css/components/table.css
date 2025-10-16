@@ -1,0 +1,149 @@
+table {
+    overflow: unset;
+    width: 100%;
+    max-width: 100%;
+    border: 0;
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+table .formatting {
+    line-height: 1.75;
+}
+
+table th,
+table td {
+    position: relative;
+    padding: 12px 16px;
+    border: var(--stroke) solid var(--mono-30);
+    text-align: left;
+    vertical-align: middle;
+}
+
+table th:first-child,
+table td:first-child {
+    padding-left: 0;
+    border-left-width: 0;
+}
+
+table th:last-child,
+table td:last-child {
+    padding-right: 0;
+    border-right-width: 0;
+}
+
+table thead tr:first-child th,
+table thead tr:first-child td {
+    border-top-width: 0;
+}
+
+table thead {
+    border-bottom: 2px solid var(--mono-30);
+}
+
+table tbody tr:first-child td {
+    border-top-width: 0;
+}
+
+table tbody tr:last-child td {
+    border-bottom-width: 0;
+}
+
+table tfoot th,
+table tfoot td {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+table tfoot tr:last-child th,
+table tfoot tr:last-child td {
+    border-bottom-width: 0;
+}
+
+table tfoot {
+    border-top: 2px solid var(--mono-30);
+}
+
+.table-hz th,
+.table-hz td {
+    border-right: 0;
+    border-left: 0;
+}
+
+.table-frame {
+    overflow: hidden;
+    border: var(--stroke) solid var(--mono-30);
+    border-radius: var(--radius-sm);
+}
+
+.table-frame.transparent thead,
+.table-frame.transparent tfoot {
+    background-color: transparent;
+}
+
+.table-frame thead,
+.table-frame tfoot {
+    background-color: var(--mono-05);
+    border-width: 0;
+}
+
+.table-frame thead tr:first-child th,
+.table-frame thead tr:first-child td {
+    padding-top: 16px;
+}
+
+.table-frame tfoot tr:last-child th,
+.table-frame tfoot tr:last-child td {
+    padding-bottom: 16px;
+}
+
+.table-frame th,
+.table-frame td {
+    padding-right: 16px !important;
+    padding-left: 16px !important;
+}
+
+.table-odd th,
+.table-odd td {
+    padding-right: 16px !important;
+    padding-left: 16px !important;
+    border-width: 0;
+}
+
+.table-odd thead,
+.table-odd tfoot {
+    border-width: 0;
+}
+
+.table-odd tbody tr:nth-child(odd) td {
+    background-color: var(--odd);
+}
+
+.table-odd tbody tr:nth-child(odd) td:first-child {
+    border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+}
+
+.table-odd tbody tr:nth-child(odd) td:last-child {
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.table-odd tbody:not(:last-child) tr:last-child:nth-child(even) td {
+    border-bottom-width: var(--stroke);
+}
+
+.table-hz thead tr:first-child th,
+.table-hz thead tr:first-child td,
+.table-hz tbody:first-child tr:first-child td,
+.table-odd thead tr:first-child th,
+.table-odd thead tr:first-child td {
+    padding-top: 0;
+}
+
+.table-hz tfoot tr:last-child th,
+.table-hz tfoot tr:last-child td,
+.table-hz tbody:last-child tr:last-child td,
+.table-odd tfoot tr:last-child th,
+.table-odd tfoot tr:last-child td,
+.table-odd tbody:last-child tr:last-child:nth-child(even) td {
+    padding-bottom: 0;
+}

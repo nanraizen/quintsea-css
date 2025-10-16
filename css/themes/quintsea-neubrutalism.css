@@ -1,0 +1,278 @@
+/*!
+ * Quintsea CSS Theme (quintsea-neubrutalism.css) v0.2.0
+ */
+
+:root {
+    --icon-chevron-down2: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="%233A3C42"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>');
+    --icon-chevron-right: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="%233A3C42"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>');
+    --icon-plus: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="%233A3C42"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>');
+    --radius-xs: 0;
+    --radius-sm: 0;
+    --radius-md: 0;
+    --radius-lg: 0;
+    --radius-xl: 0;
+    --stroke: 2px;
+    --stroke-min: -2px;
+    --red: #FF6B5E;
+    --red-dark: #E65F52;
+    --red-darker: #CC5246;
+    --red-10: #FF6B5E0D;
+    --red-20: #FF6B5E26;
+    --red-30: #FF6B5E40;
+    --red-40: #FF6B5E59;
+    --pink: #FF76A8;
+    --pink-dark: #E86997;
+    --pink-darker: #D05C87;
+    --pink-10: #FF76A80D;
+    --pink-20: #FF76A826;
+    --pink-30: #FF76A840;
+    --pink-40: #FF76A859;
+    --purple: #A58BFF;
+    --purple-dark: #967DEB;
+    --purple-darker: #856ED7;
+    --purple-10: #A58BFF0D;
+    --purple-20: #A58BFF26;
+    --purple-30: #A58BFF40;
+    --purple-40: #A58BFF59;
+    --blue: #4EA4FF;
+    --blue-dark: #4696EB;
+    --blue-darker: #3D87D7;
+    --blue-10: #4EA4FF0D;
+    --blue-20: #4EA4FF26;
+    --blue-30: #4EA4FF40;
+    --blue-40: #4EA4FF59;
+    --teal: #40E0D0;
+    --teal-dark: #38CDBF;
+    --teal-darker: #31B9AA;
+    --teal-10: #40E0D00D;
+    --teal-20: #40E0D026;
+    --teal-30: #40E0D040;
+    --teal-40: #40E0D059;
+    --green: #52E38B;
+    --green-dark: #49D57F;
+    --green-darker: #3EBF6F;
+    --green-10: #52E38B0D;
+    --green-20: #52E38B26;
+    --green-30: #52E38B40;
+    --green-40: #52E38B59;
+    --yellow: #FFE162;
+    --yellow-dark: #F5D65A;
+    --yellow-darker: #E0C34D;
+    --yellow-10: #FFE16210;
+    --yellow-20: #FFE16220;
+    --yellow-30: #FFE16230;
+    --yellow-40: #FFE16240;
+    --orange: #FF955C;
+    --orange-dark: #F28753;
+    --orange-darker: #DE7946;
+    --orange-10: #FF955C0D;
+    --orange-20: #FF955C26;
+    --orange-30: #FF955C40;
+    --orange-40: #FF955C59;
+    --brown: #C18A5A;
+    --brown-dark: #B57F52;
+    --brown-darker: #A67147;
+    --brown-10: #C18A5A0D;
+    --brown-20: #C18A5A26;
+    --brown-30: #C18A5A40;
+    --brown-40: #C18A5A59;
+}
+
+blockquote,
+.alert {
+    background-color: var(--color-20);
+}
+
+blockquote::after,
+.alert::after,
+.btn.btn-o::before,
+.btn.btn-l::before,
+[data-dropdown=content] nav .btn::after {
+    display: none;
+}
+
+blockquote,
+.alert,
+.btn,
+.btn.btn-o:hover,
+.card,
+.cardset,
+input,
+select,
+textarea,
+.group,
+.copy-notif,
+[data-modal=content] .modal-card,
+[data-dropdown=content] {
+    box-shadow: 4px 4px 0 0 var(--text);
+}
+
+.btn.btn-xs,
+.option input+.mark::before,
+.progress,
+progress,
+[data-modal=content] .modal-card>header [data-modal=close] {
+    box-shadow: 2px 2px 0 0 var(--text);
+}
+
+.option input:checked+.mark::before,
+.option input[role=switch]+.mark::after,
+.navtabs.underline .btn::before {
+    background-color: var(--text) !important;
+}
+
+.option input[role=switch]:checked+.mark::after,
+.option input[type=radio]+.mark::after {
+    background-color: var(--bg) !important;
+}
+
+blockquote,
+figcaption,
+hr,
+.alert,
+.btn.btn-o,
+.card,
+.cardset,
+input,
+select,
+textarea,
+input:disabled,
+select:disabled,
+textarea:disabled,
+textarea:read-only,
+.placeholder,
+.option input+.mark::before,
+[data-modal=content] .modal-card>header,
+[data-modal=content] .modal-card>footer,
+table th,
+table td,
+.table-frame,
+.group.btn-o,
+.group>label,
+[data-dropdown=content],
+.navtabs.underline .btn::after {
+    border-color: var(--text) !important;
+}
+
+[data-dropdown=content] nav [class=btn],
+[data-dropdown=content] nav [class~='current'],
+[data-dropdown=content] nav [class='btn active'] {
+    border-color: transparent;
+}
+
+.btn,
+.btn.btn-o.default,
+.progress,
+progress,
+.copy-notif,
+[data-modal=content] .modal-card {
+    border: var(--stroke) solid var(--text);
+    color: var(--text) !important;
+}
+
+figcaption,
+.floating-label label.clone,
+.copy-notif .glyph,
+.navtabs>.btn.active,
+.navtabs.underline>.btn,
+.navtabs.underline>.btn:hover,
+.navtabs.underline>.btn.active {
+    color: var(--text) !important;
+}
+
+.btn.btn-o,
+.cardset.divider,
+.cardset[class*=gap-],
+.cardset:not([class*=gap-]) .card,
+input:focus,
+select:focus,
+textarea:focus,
+input:disabled,
+input:read-only,
+select:disabled,
+textarea:disabled,
+textarea:read-only,
+.placeholder,
+.option input:checked+.mark::before,
+.group>*,
+.underline input,
+.underline select,
+.underline textarea,
+.underline .group [data-dropdown=content] nav .btn,
+.underline .group,
+[data-dropdown=content] nav .btn,
+.navtabs.underline .btn {
+    box-shadow: unset !important;
+}
+
+.btn.btn:active {
+    box-shadow: unset;
+    transform: translate(4px, 4px);
+}
+
+.btn.btn-xs:active,
+[data-modal=content] .modal-card>header [data-modal=close]:active {
+    box-shadow: unset;
+    transform: translate(2px, 2px);
+}
+
+.btn.btn-i:active,
+.group>*,
+[data-dropdown=content] nav .btn:active,
+.navtabs.underline .btn {
+    transform: unset !important;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    box-shadow: 0 0 0 var(--stroke) inset var(--text);
+    background-color: var(--bg);
+    border-image: linear-gradient(90deg, var(--text) 50%, var(--mono-30) 0) 0 1 / calc(50% - 1px) 100vw / 0 calc(100vw + 0px);
+}
+
+input[type=range]::-moz-range-thumb {
+    box-shadow: 0 0 0 var(--stroke) inset var(--text);
+    background-color: var(--bg);
+    border-image: linear-gradient(90deg, var(--text) 50%, var(--mono-30) 0) 0 1 / calc(50% - 1px) 100vw / 0 calc(100vw);
+}
+
+input[type=range]+.range-value {
+    background-color: var(--text);
+    border: unset;
+    color: var(--bg);
+}
+
+.option input[type=checkbox]:not([role=switch])+.mark::after {
+    filter: var(--brigtness);
+}
+
+.show-percent>*::before,
+progress.show-percent::before {
+    top: 0;
+    right: 0;
+    background-color: transparent;
+}
+
+.group:not(.btn-o)>*:nth-child(n+2) {
+    margin-left: var(--stroke-min) !important;
+}
+
+.accordion>.btn[data-accordion=toggle]:not(.btn-t):nth-child(n+2) {
+    margin-top: var(--stroke-min);
+}
+
+.accordion>.btn[data-accordion=toggle]:not(.btn-t).expand+[data-accordion=content]+[data-accordion=toggle]:nth-child(n+2) {
+    margin-top: 0;
+}
+
+.copy-notif {
+    background-color: var(--green);
+    border-radius: 0;
+}
+
+[data-dropdown=content] {
+    margin: 8px 0;
+}
+
+.dropdown [data-dropdown=toggle].btn:not(.btn-o):not(.btn-l) .caret {
+    filter: var(--brigtness-reverse);
+}

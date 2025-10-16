@@ -1,0 +1,119 @@
+.option {
+    display: flex;
+    gap: 16px;
+    position: relative;
+    padding: 0;
+    padding-top: 1px;
+    cursor: pointer;
+    font-weight: 400 !important;
+}
+
+.option input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.option input+.mark {
+    display: flex;
+    gap: 16px;
+    position: relative;
+}
+
+.option input+.mark::before {
+    content: '';
+    display: block;
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    margin-top: -1px;
+    transition: border-color .2s var(--cubic), background-color .2s var(--cubic), box-shadow .2s var(--cubic);
+    background-color: transparent;
+    border: var(--stroke) solid var(--mono-30);
+    border-radius: var(--radius-sm);
+}
+
+.option input+.mark::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 1px;
+    opacity: 0;
+    transform: translateY(6px);
+    width: 24px;
+    height: 24px;
+    transition: opacity .2s var(--cubic), transform .2s var(--cubic), background-color .2s var(--cubic);
+    background-image: var(--icon-check);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: var(--radius-sm);
+}
+
+.option input:checked+.mark::before {
+    box-shadow: 0 0 0 var(--stroke) inset var(--primary);
+    background-color: var(--primary-20);
+    border-color: var(--primary);
+}
+
+.option input:checked+.mark::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.option input:disabled+.mark::before {
+    box-shadow: unset !important;
+    background-color: var(--mono-05);
+    border-color: var(--mono-30) !important;
+}
+
+.option input[type=checkbox]:not([role=switch])+.mark::after {
+    background-color: transparent !important;
+}
+
+.option input[role=switch]+.mark::before {
+    width: 44px;
+    border-radius: 99px;
+}
+
+.option input[role=switch]+.mark::after {
+    box-shadow: var(--shadow-sm);
+    content: '';
+    top: 3px !important;
+    left: 4px;
+    opacity: 1;
+    transform: translateX(0);
+    width: 18px;
+    height: 18px;
+    background-color: var(--mono-30);
+    background-image: none !important;
+    border-radius: 99px;
+}
+
+.option input[role=switch]:checked+.mark::after {
+    transform: translateX(18px);
+    background-color: var(--primary);
+}
+
+.option input[type=radio]+.mark::before {
+    border-radius: 99px;
+}
+
+.option input[type=radio]+.mark::after {
+    content: '';
+    top: 9px;
+    left: 10px;
+    width: 6px;
+    height: 6px;
+    background-color: var(--primary);
+    background-image: none !important;
+    border-radius: 99px;
+}
+
+.option.disabled {
+    cursor: not-allowed;
+    color: var(--mono-50);
+}
+
+.option:hover .mark::before {
+    border-color: var(--mono-40);
+}

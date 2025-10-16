@@ -1,0 +1,139 @@
+.navbar {
+    position: relative;
+    z-index: 99991;
+    padding: 8px 36px;
+    background-color: var(--card);
+    font-size: 14px;
+}
+
+.navbar.fixed {
+    position: fixed;
+    z-index: 99992;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.navbar.absolute {
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.navbar.sticky {
+    z-index: 99993;
+    left: 0;
+    right: 0;
+}
+
+.navbar.color {
+    background-color: var(--color);
+}
+
+.navbar.color a {
+    color: var(--text-reverse);
+}
+
+.navbar>.container,
+.navbar>.fluid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+    min-width: 0;
+}
+
+.navbar-logo {
+    margin: auto 0;
+}
+
+.navbar-logo a {
+    display: flex;
+    font-weight: var(--font-semibold);
+}
+
+.navbar-logo a:not(.btn-i) img {
+    max-width: 160px;
+    max-height: 24px;
+}
+
+.navbar-logo a>b {
+    font-size: 18px;
+}
+
+.navbar nav {
+    margin: auto 0;
+}
+
+.navbar nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 28px;
+}
+
+.navbar nav ul li {
+    margin: auto 0;
+}
+
+.navbar nav ul li.divider {
+    height: 24px;
+    border-left: 1px solid var(--mono-30);
+}
+
+.navbar nav ul li a:not(.btn) {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    height: 48px;
+    line-height: 1.2;
+}
+
+.navbar nav ul li.new a::after {
+    box-shadow: var(--shadow-sm);
+    content: 'new';
+    display: block;
+    position: relative;
+    top: -8px;
+    margin-left: -6px;
+    padding: 0 6px 1px;
+    background-color: var(--red);
+    border-radius: var(--radius-xl);
+    font-size: 10px;
+    font-family: var(--font-2);
+    line-height: 16px;
+    color: var(--mono-00);
+}
+
+.navbar nav ul li.new-dot a::before {
+    box-shadow: 0 0 0 2px var(--card);
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    width: 8px;
+    height: 8px;
+    background-color: var(--red);
+    border-radius: 99px;
+}
+
+.navbar nav ul li .btn {
+    display: flex;
+}
+
+.navbar nav ul li .caret {
+    margin-left: -6px;
+}
+
+.navbar nav.right {
+    margin-left: auto;
+}
+
+.navbar nav.center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}

@@ -1,0 +1,57 @@
+[aria-readonly=true] {
+    pointer-events: none;
+}
+
+.inherit {
+    display: inherit;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.flow-x {
+    overflow-x: auto;
+}
+
+.hv-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.hz-center {
+    justify-content: center;
+}
+
+.hz-left {
+    justify-content: start;
+}
+
+.hz-right {
+    justify-content: end;
+}
+
+.hz-fluid>* {
+    flex: 1;
+    max-width: unset;
+}
+
+.hz-fluid>.btn {
+    justify-content: center;
+}
+
+.vr-center {
+    align-items: center;
+}
+
+.vr-start {
+    align-items: start;
+}
+
+.vr-end {
+    align-items: end;
+}

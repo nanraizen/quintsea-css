@@ -1,0 +1,149 @@
+.dropdown {
+    position: relative;
+}
+
+[data-dropdown=content] {
+    box-shadow: var(--shadow-sm);
+    pointer-events: none;
+    will-change: transform, opacity;
+    position: absolute;
+    z-index: 98;
+    top: 100%;
+    opacity: 0;
+    transform: scale(.95);
+    min-width: 280px;
+    margin: 4px 0;
+    padding: 16px;
+    transition: opacity .2s var(--cubic), transform .2s var(--cubic);
+    background-color: var(--dropdown) !important;
+    border: 2px solid var(--color);
+    border-radius: var(--radius-md);
+    font-size: 14px;
+}
+
+[data-dropdown=content].open {
+    pointer-events: auto;
+    opacity: 1;
+    transform: scale(1);
+}
+
+[data-dropdown=content] nav {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+[data-dropdown=content] nav hr {
+    margin: 16px 0;
+}
+
+[data-dropdown=content] nav .btn {
+    justify-content: unset;
+    gap: 16px;
+    overflow: unset;
+    height: 40px;
+    padding-right: 16px !important;
+    padding-left: 16px !important;
+    border-radius: var(--radius-sm);
+}
+
+[data-dropdown=content] nav .btn::after {
+    pointer-events: none;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: -16px;
+    opacity: 0;
+    transform: translateY(-50%);
+    height: 24px;
+    transition: var(--ease);
+    border-left: 2px solid var(--color);
+}
+
+[data-dropdown=content] nav .btn-i {
+    height: unset;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+[data-dropdown=content] nav .btn-i img {
+    margin-right: -2px;
+    margin-left: -2px;
+}
+
+[data-dropdown=content] nav [class=btn],
+[data-dropdown=content] nav [class~='current'],
+[data-dropdown=content] nav [class='btn active'] {
+    background-color: transparent;
+    color: var(--text) !important;
+}
+
+[data-dropdown=content] nav [class~='current'],
+[data-dropdown=content] nav [class='btn active'] {
+    font-variation-settings: 'FILL'1;
+    color: var(--color-darker) !important;
+}
+
+[data-dropdown=content] nav [class=btn]:hover,
+[data-dropdown=content] nav [class~='current']:hover,
+[data-dropdown=content] nav [class='btn active']:hover {
+    background-color: var(--color-20);
+    color: var(--color-darker) !important;
+}
+
+[data-dropdown=content] nav [class=btn]:hover:after,
+[data-dropdown=content] nav .btn.active::after,
+[data-dropdown=content] nav .btn.current::after {
+    opacity: 1;
+}
+
+[data-dropdown=content] nav .title {
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 16px;
+    background-color: unset;
+}
+
+[data-dropdown=content] nav .title+.btn-i {
+    padding-top: 8px;
+}
+
+.dropdown.center [data-dropdown=content] {
+    left: 50%;
+    transform: translateX(-50%) scale(.95);
+}
+
+.dropdown.center [data-dropdown=content].open {
+    transform: translateX(-50%) scale(1);
+}
+
+.dropdown.right [data-dropdown=content] {
+    right: 0;
+}
+
+.dropdown.fluid [data-dropdown=content] {
+    left: 0;
+    right: 0;
+    min-width: unset;
+}
+
+.dropdown [data-dropdown=toggle].btn:not(.btn-o) .caret,
+.dropdown [data-dropdown=toggle].btn:not(.btn-l) .caret {
+    filter: var(--brigtness);
+}
+
+.dropdown [data-dropdown=toggle].btn.default .caret {
+    filter: var(--brigtness-reverse);
+}
+
+.dropup [data-dropdown=content] {
+    top: unset;
+    bottom: 100%;
+}
+
+.dropup .caret {
+    transform: rotate(-180deg);
+}

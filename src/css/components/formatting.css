@@ -1,0 +1,153 @@
+.formatting {
+    overflow-wrap: anywhere;
+    line-height: 1.75;
+    text-align: justify;
+    word-break: normal;
+}
+
+.formatting a {
+    color: var(--primary);
+}
+
+.formatting a:hover {
+    text-underline-offset: 6px;
+    text-decoration: underline;
+}
+
+.formatting p:empty::before {
+    display: none;
+}
+
+.formatting img {
+    box-shadow: var(--shadow-sm);
+    display: block;
+    height: auto;
+    border-radius: var(--radius-sm);
+}
+
+.formatting figure {
+    position: relative;
+}
+
+.formatting ul li {
+    position: relative;
+    padding-left: 24px;
+}
+
+.formatting ul li::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 11px;
+    left: 4px;
+    width: 6px;
+    height: 6px;
+    background-color: var(--mono-40);
+    border-radius: 99px;
+}
+
+.formatting ul.icon li {
+    padding-left: 36px;
+}
+
+.formatting ul.icon li::before {
+    display: none;
+}
+
+.formatting ul.icon li>span:first-child {
+    position: absolute;
+    left: 0;
+    width: 24px;
+    text-align: center;
+}
+
+.formatting ul.icon li .glyph {
+    font-variation-settings: 'FILL'1;
+    top: 2px;
+}
+
+.formatting ul.icon li .fab {
+    top: 4px;
+    font-size: 20px;
+}
+
+.formatting ol li {
+    position: relative;
+    padding-left: 24px;
+    counter-increment: num;
+}
+
+.formatting ol li::before {
+    content: counter(num)'.';
+    position: absolute;
+    left: 0;
+    font-weight: var(--font-regular);
+}
+
+.formatting ol li ol li {
+    padding-left: 36px;
+    counter-increment: subnum;
+}
+
+.formatting ol li ol li::before {
+    content: counter(num)'.'counter(subnum)'.';
+}
+
+.formatting ol li ol li ol>li {
+    padding-left: 48px;
+    counter-increment: subsubnum;
+}
+
+.formatting ol li ol li ol>li::before {
+    content: counter(num)'.'counter(subnum)'.'counter(subsubnum)'.';
+}
+
+.formatting ul,
+.formatting ol {
+    padding-left: 16px;
+    list-style: none;
+}
+
+.formatting ul ul,
+.formatting ul ol,
+.formatting ol ol,
+.formatting ol ul {
+    margin-top: 4px;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+.formatting>* {
+    margin: 24px 0;
+}
+
+.formatting>p,
+.formatting>ol,
+.formatting>ul {
+    margin: 16px 0;
+}
+
+.formatting>h1,
+.formatting>h2,
+.formatting>h3,
+.formatting>h4,
+.formatting>h5 {
+    margin-bottom: 16px;
+}
+
+.formatting>*:first-child {
+    margin-top: 0;
+}
+
+.formatting>*:last-child {
+    margin-bottom: 0;
+}
+
+.formatting li:nth-of-type(n+2) {
+    margin-top: 4px;
+}
+
+.formatting p img {
+    display: unset;
+    margin: 8px 0;
+}
