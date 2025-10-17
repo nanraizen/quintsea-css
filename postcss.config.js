@@ -14,7 +14,7 @@ module.exports = (e) => {
 			require('postcss-header')({
 				header: [
 					'/*!',
-					' * Quintsea CSS Addon (' + file + ') v' + pkg.version,
+					' * Quintsea CSS Addon (' + file + ')',
 					' */',
 				].join('\n'),
 			})
@@ -24,7 +24,7 @@ module.exports = (e) => {
 			require('postcss-header')({
 				header: [
 					'/*!',
-					' * Quintsea CSS Theme (' + file + ') v' + pkg.version,
+					' * Quintsea CSS Theme (' + file + ')',
 					' */',
 				].join('\n'),
 			})
@@ -34,9 +34,9 @@ module.exports = (e) => {
 			require('postcss-header')({
 				header: [
 					'/*!',
-					' * Quintsea CSS v' + pkg.version + ' (https://quintsea.nanraizen.me)',
-					' * (c) ' + year + ' | MIT License',
-					' */',
+					' * Quintsea CSS v' + pkg.version + ' (' + pkg.homepage + ')',
+					' * (c) ' + year + ' | ' + pkg.license + ' License',
+					' */\n',
 				].join('\n'),
 			})
 		);
