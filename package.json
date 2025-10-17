@@ -1,6 +1,6 @@
 {
 	"name": "quintsea-css",
-	"version": "0.2.1",
+	"version": "0.2.2",
 	"description": "A CSS framework built around five aesthetics (4+1), which includes Minimalism (+ dark mode), Neubrutalism, Flat and Retro UI Design.",
 	"keywords": [
 		"css",
@@ -37,7 +37,8 @@
 		"minify": "cleancss css/!(*.min).css --batch --batch-suffix \".min\"",
 		"minify:addons": "cleancss css/addons/!(*.min).css --batch --batch-suffix \".min\"",
 		"minify:themes": "cleancss css/themes/!(*.min).css --batch --batch-suffix \".min\"",
-		"build": "npm run compile && npm run minify && npm run compile:themes && npm run minify:themes && npm run compile:addons && npm run minify:addons"
+		"header:js": "node src/js/header.js",
+		"build": "npm run compile && npm run minify && npm run compile:themes && npm run minify:themes && npm run compile:addons && npm run minify:addons && npm run header:js"
 	},
 	"devDependencies": {
 		"clean-css-cli": "^5.6.3",
