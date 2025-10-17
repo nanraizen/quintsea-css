@@ -1,5 +1,5 @@
 /*!
- * Quintsea CSS v0.2.0 (https://quintsea.nanraizen.me)
+ * Quintsea CSS v0.2.1 (https://quintsea.nanraizen.me)
  * (c) 2025 | MIT License
  */
 document.querySelectorAll('a[href="#"]').forEach(e => {
