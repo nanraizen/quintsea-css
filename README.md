@@ -16,8 +16,7 @@ Check out the [live demo](https://quintsea.nanraizen.me) and detailed [documenta
 
 ## Installation
 ### Install Manually
-1. Download the latest from [Releases](../../releases).  
-2. Extract the files and include them in your project (e.g., `quintsea-css/`). 
+Download from the [Releases](../../releases), extract and link it to your project (e.g., `quintsea-css/`). 
 
 ```html
 <!-- base css (default appearance) -->
@@ -28,6 +27,19 @@ Check out the [live demo](https://quintsea.nanraizen.me) and detailed [documenta
 
 <!-- js for interactive components-->
 <script src="quintsea-css/js/quintsea.min.js"></script>
+```
+
+### Using CDN
+You can also use the CDN for a quick setup. See the package on [jsDelivr](https://www.jsdelivr.com/package/npm/quintsea-css).
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/quintsea-css@latest/css/quintsea.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/quintsea-css@latest/js/quintsea.min.js"></script>
+```
+
+### Using NPM
+```html
+npm install quintsea-css
 ```
 
 ## Usage Example
@@ -48,7 +60,7 @@ Check out the [live demo](https://quintsea.nanraizen.me) and detailed [documenta
 
 Quintsea CSS is not a complete layout system. You'll still need to use additional css `grid`, `flex`, or other layout methods for advanced layouts. However, a set of starter `grid` and `flex` classes is included for convenience, and they remain intentionally minimal.
 
-base example
+base example :
 ```html
 <div class="grid grid-3 gap-12"> ... </div>
 <!-- or -->
@@ -56,7 +68,7 @@ base example
 <!-- or -->
 <div class="flex gap-12"> ... </div>
 ```
-grid/cardset example
+grid/cardset example :
 ```html
 <div class="cardset grid-3 gap-12">
     <div class="card row-span-2">1 (row span 2)</div>
@@ -65,7 +77,7 @@ grid/cardset example
     <div class="card col-span-2">4 (span 2)</div>
 </div>
 ```
-flex example
+flex example :
 ```html
 <nav class="flex gap-12">
     <a href="#" class="btn primary">1</a>
@@ -75,7 +87,7 @@ flex example
 ```
 
 ## Dark Mode
-Add the inline init script before `</head>`
+Add the inline init script before `</head>`.
 ```html
 <script>
     (function initTheme() {
@@ -95,7 +107,7 @@ Add the inline init script before `</head>`
     })();
 </script>
 ```
-There are three ways to switch between light and dark mode
+There are three ways to switch between light and dark mode.
 ```html
 <!-- set a specific theme -->
 <button data-theme-trigger="dark">Dark</button>
