@@ -32,8 +32,10 @@ Download from the [Releases](../../releases), extract and link it to your projec
 ### Using CDN
 You can also use the CDN for a quick setup. See the package on [jsDelivr](https://www.jsdelivr.com/package/npm/quintsea-css).
 ```html
+<!-- css -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/quintsea-css@latest/css/quintsea.min.css">
 
+<!-- js -->
 <script src="https://cdn.jsdelivr.net/npm/quintsea-css@latest/js/quintsea.min.js"></script>
 ```
 
