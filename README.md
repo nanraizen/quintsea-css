@@ -1,3 +1,5 @@
+![banner](media/banner.webp)
+
 # Quintsea CSS
 
 Quintsea is a CSS framework built around five aesthetics (4+1), which includes Minimalism (+ dark mode), Neubrutalism, ~~Flat~~ and ~~Retro~~ UI Design.
