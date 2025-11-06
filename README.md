@@ -11,10 +11,11 @@ Check out the [live demo](https://quintsea.nanraizen.me) and detailed [documenta
 ## Overview
 
 - 🎭 **4+1 Aesthetics** -  four design aesthetics with Dark Mode available for Minimalism.
-- 🎨 **Colors** - palettes that bring designs to life.  
 - 🧩 **Components** - reusable building blocks.
-- 🔤 **Formatting** - clean, readable text styling.
 - ⚡ **States** - smooth interactions and feedback.
+- 🔤 **Formatting** - clean, readable text styling.
+- 🎨 **Colors** - palettes that bring designs to life.
+- 🌄 **Backgrounds** - subtle textures and visuals that set the mood.
 
 ## Installation
 
