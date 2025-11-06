@@ -92,8 +92,11 @@
 [data-modal=content] .modal-card>section {
     overflow-y: auto;
     padding: 24px;
-    padding-bottom: 0 !important;
     font-size: 14px;
+}
+
+[data-modal=content] .modal-card>section:not(:last-child) {
+    padding-bottom: 0 !important;
 }
 
 [data-modal=content].open {

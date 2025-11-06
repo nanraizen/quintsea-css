@@ -74,7 +74,7 @@
 }
 
 .cardset[class*=gap-].hover .card:hover {
-    box-shadow: 0 0 0 var(--stroke) var(--primary);
+    box-shadow: 0 0 0 var(--stroke) inset var(--primary);
     background-color: unset;
     border-color: var(--primary);
 }

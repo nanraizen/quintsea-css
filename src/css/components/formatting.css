@@ -118,7 +118,7 @@
 }
 
 .formatting>* {
-    margin: 24px 0;
+    margin: 28px 0;
 }
 
 .formatting>p,
@@ -127,11 +127,14 @@
     margin: 16px 0;
 }
 
-.formatting>h1,
-.formatting>h2,
-.formatting>h3,
-.formatting>h4,
-.formatting>h5 {
+.formatting h1 {
+    margin-bottom: 36px;
+}
+
+.formatting h2,
+.formatting h3,
+.formatting h4,
+.formatting h5 {
     margin-bottom: 16px;
 }
 

@@ -36,3 +36,8 @@ img.img-cover {
 .img-th:hover::before {
     opacity: .25;
 }
+
+.img-th img {
+    position: relative;
+    transform: scale(1.02);
+}

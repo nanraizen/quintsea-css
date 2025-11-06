@@ -4,6 +4,8 @@
 .tooltip-text,
 .progress,
 .form-control:placeholder-shown,
+.glyph,
+.navbar,
 label {
     -webkit-touch-callout: none;
     -webkit-user-select: none;

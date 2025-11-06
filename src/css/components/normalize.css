@@ -3,6 +3,8 @@
 *,
 *::before,
 *::after {
+    scrollbar-width: thin;
+    scrollbar-color: var(--mono-40) var(--bg);
     box-sizing: inherit;
     margin: 0;
     padding: 0;
@@ -10,6 +12,14 @@
 
 *:focus-visible {
     outline: none;
+}
+
+::-webkit-scrollbar {
+    background-color: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--mono-40);
 }
 
 html {
@@ -177,6 +187,7 @@ textarea {
 button,
 input {
     overflow: visible;
+    text-align: unset;
 }
 
 button,
@@ -250,26 +261,28 @@ summary {
 template,
 [hidden],
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 mark {
-    background-color: #ff0;
-    color: #000;
+    background-color: var(--primary-20);
+    border: 1px solid var(--primary);
+    border-radius: 6px;
+    color: var(--text);
 }
 
 pre {
-    font-size: var(--font-size);
-    font-family: var(--font-2);
+    font-family: Consolas, 'Courier New', monospace;
 }
 
 code,
 kbd,
 samp {
-    padding: 0 8px 2px;
-    background-color: var(--red-30);
-    font-size: var(--font-size);
-    font-family: var(--font-2);
+    padding: 2px 6px;
+    background-color: var(--red-20);
+    border-radius: 4px;
+    font-family: Consolas, 'Courier New', monospace;
+    line-height: 1;
     color: var(--red-darker);
 }
 

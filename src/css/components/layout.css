@@ -40,10 +40,6 @@
     max-width: unset;
 }
 
-.hz-fluid>.btn {
-    justify-content: center;
-}
-
 .vr-center {
     align-items: center;
 }

@@ -91,6 +91,10 @@
     gap: 0;
 }
 
+.navtabs.underline.hz-fluid .btn {
+    justify-content: center;
+}
+
 .navtabs.underline.hz-fluid .btn::after {
     opacity: 0;
 }

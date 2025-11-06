@@ -163,7 +163,7 @@
 }
 
 .btn.btn-t:hover {
-    color: var(--color-darker) !important;
+    color: var(--color) !important;
 }
 
 .btn.btn-xs {
@@ -246,6 +246,22 @@
     height: unset !important;
     padding-top: 16px;
     padding-bottom: 16px;
+}
+
+.btn.btn-a {
+    height: unset !important;
+    padding: 0;
+    background-color: transparent;
+    color: var(--color) !important;
+}
+
+.btn.btn-a:hover>*:not(.glyph) {
+    text-underline-offset: 6px;
+    text-decoration: underline !important;
+}
+
+.btn.btn-b {
+    display: flex;
 }
 
 .btn.text-center {

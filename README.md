@@ -15,7 +15,9 @@ Check out the [live demo](https://quintsea.nanraizen.me) and detailed [documenta
 - ⚡ **States** - smooth interactions and feedback.
 
 ## Installation
+
 ### Install Manually
+
 Download from the [Releases](../../releases), extract and link it to your project (e.g., `quintsea-css/`). 
 
 ```html
@@ -30,7 +32,9 @@ Download from the [Releases](../../releases), extract and link it to your projec
 ```
 
 ### Using CDN
+
 You can also use the CDN for a quick setup. See the package on [jsDelivr](https://www.jsdelivr.com/package/npm/quintsea-css).
+
 ```html
 <!-- css -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/quintsea-css@latest/css/quintsea.min.css">
@@ -39,7 +43,8 @@ You can also use the CDN for a quick setup. See the package on [jsDelivr](https:
 <script src="https://cdn.jsdelivr.net/npm/quintsea-css@latest/js/quintsea.min.js"></script>
 ```
 
-### Using NPM
+### Install with NPM
+
 ```html
 npm install quintsea-css
 ```
@@ -63,6 +68,7 @@ npm install quintsea-css
 Quintsea CSS is not a complete layout system. You'll still need to use additional css `grid`, `flex`, or other layout methods for advanced layouts. However, a set of starter `grid` and `flex` classes is included for convenience, and they remain intentionally minimal.
 
 base example :
+
 ```html
 <div class="grid grid-3 gap-12"> ... </div>
 <!-- or -->
@@ -70,7 +76,9 @@ base example :
 <!-- or -->
 <div class="flex gap-12"> ... </div>
 ```
+
 grid/cardset example :
+
 ```html
 <div class="cardset grid-3 gap-12">
     <div class="card row-span-2">1 (row span 2)</div>
@@ -79,7 +87,9 @@ grid/cardset example :
     <div class="card col-span-2">4 (span 2)</div>
 </div>
 ```
+
 flex example :
+
 ```html
 <nav class="flex gap-12">
     <a href="#" class="btn primary">1</a>
@@ -89,7 +99,9 @@ flex example :
 ```
 
 ## Dark Mode
+
 Add the inline init script before `</head>`.
+
 ```html
 <script>
     (function initTheme() {
@@ -110,6 +122,7 @@ Add the inline init script before `</head>`.
 </script>
 ```
 There are three ways to switch between light and dark mode.
+
 ```html
 <!-- set a specific theme -->
 <button data-theme-trigger="dark">Dark</button>
@@ -124,7 +137,7 @@ There are three ways to switch between light and dark mode.
 
 ## Browser Support
 
-Quintsea CSS also uses [normalize.css](https://necolas.github.io/normalize.css/) to reset default browser styles.
+Quintsea CSS uses [normalize.css](https://necolas.github.io/normalize.css) to reset default browser styles, and [Material Symbols](https://fonts.google.com/icons) for the icons.
 
 - Chromium-based, 2020 and newer (Chromium 85+).
 - Firefox, 2020 and newer (Firefox 80+).
@@ -133,4 +146,4 @@ Quintsea CSS also uses [normalize.css](https://necolas.github.io/normalize.css/)
 
 ## License
 
-Code licensed under [MIT](https://github.com/nanraizen/quintsea-css/blob/main/LICENSE), documentation under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+Code licensed under [MIT](https://github.com/nanraizen/quintsea-css/blob/main/LICENSE).

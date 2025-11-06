@@ -17,6 +17,7 @@
     --radius-md: 12px;
     --radius-lg: 16px;
     --radius-xl: 24px;
+    --navbar-gap:36px;
     --backdrop: rgba(24, 24, 27, .6);
     --backdrop-alt: rgba(24, 24, 27, .75);
     --tooltip: rgba(24, 24, 27, .75);
@@ -152,4 +153,12 @@
     --icon-success: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="%2365D88C"><path d="M360-120q-100 0-170-70t-70-170v-240q0-100 70-170t170-70h240q100 0 170 70t70 170v240q0 100-70 170t-170 70H360Zm80-312-60-60q-11-11-28-11t-28 11q-11 11-11 28t11 28l88 88q12 12 28 12t28-12l184-184q11-11 11-28t-11-28q-11-11-28-11t-28 11L440-432Z"/></svg>');
     --icon-announcements: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="%237689FF"><path d="M840-440h-80q-17 0-28.5-11.5T720-480q0-17 11.5-28.5T760-520h80q17 0 28.5 11.5T880-480q0 17-11.5 28.5T840-440ZM664-288q10-14 26-16t30 8l64 48q14 10 16 26t-8 30q-10 14-26 16t-30-8l-64-48q-14-10-16-26t8-30Zm120-424-64 48q-14 10-30 8t-26-16q-10-14-8-30t16-26l64-48q14-10 30-8t26 16q10 14 8 30t-16 26ZM200-360h-40q-33 0-56.5-23.5T80-440v-80q0-33 23.5-56.5T160-600h160l139-84q20-12 40.5 0t20.5 35v338q0 23-20.5 35t-40.5 0l-139-84h-40v120q0 17-11.5 28.5T240-200q-17 0-28.5-11.5T200-240v-120Zm360 14v-268q27 24 43.5 58.5T620-480q0 41-16.5 75.5T560-346Z"/></svg>');
     --icon-check: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="%237689FF"><path d="m400-449 220-219q18-18 44-18t44 18q18 18 18 44t-18 44L445-316q-19 19-45 19t-45-19L252-420q-18-18-18-44t18-44q18-18 44-18t44 18l60 59Z"/></svg>');
+    --bg-grid: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 20 20"><path d="M20 0 L20 20 M0 20 L20 20" fill="none" stroke="%233A3C4216" stroke-width="1"/></svg>');
+    --bg-dot: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="1" fill="%233A3C423F"/></svg>');
+    --bg-graph: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><g fill="none" stroke="%233A3C4216" stroke-width="1"><path d="M20 0 L20 100 M40 0 L40 100 M60 0 L60 100 M80 0 L80 100 M0 20 L100 20 M0 40 L100 40 M0 60 L100 60 M0 80 L100 80"/></g><g fill="none" stroke="%233A3C4226" stroke-width="1.4"><path d="M100 0 L100 100 M0 100 L100 100"/></g></svg>');
+    --bg-stripe: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M0 24 L24 0" stroke="%233A3C4216" stroke-width="1" stroke-linecap="square"/></svg>');
+    --bg-plus: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M12 8 L12 16 M8 12 L16 12" stroke="%233A3C4216" stroke-width="2" stroke-linecap="square"/></svg>');
+    --bg-times: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><g transform="rotate(45 12 12)"><path d="M12 8 L12 16 M8 12 L16 12" stroke="%233A3C4216" stroke-width="2" stroke-linecap="square"/></g></svg>');
+    --bg-cube: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><path d="M20 0 L40 10 L20 20 L0 10 Z" fill="none" stroke="%233A3C4216" stroke-width="1"/><path d="M20 20 L20 40 L40 30 L40 10 Z" fill="none" stroke="%233A3C4220" stroke-width="1"/><path d="M20 20 L0 10 L0 30 L20 40 Z" fill="none" stroke="%233A3C4220" stroke-width="1"/></svg>');
+    --bg-rhombus: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><polygon points="20,0 40,20 20,40 0,20" fill="none" stroke="%233A3C4216" stroke-width="1"/></svg>');
 }
