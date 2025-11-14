@@ -261,7 +261,9 @@ document.addEventListener('DOMContentLoaded', () => {
 			const target = btn.getAttribute('href').substring(1);
 			const modal = document.getElementById(target);
 
-			if (modal) modal.classList.add('open');
+			if (!modal) return;
+
+			modal.classList.toggle('open');
 		});
 	});
 

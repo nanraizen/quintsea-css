@@ -1,5 +1,5 @@
 /*!
- * Quintsea CSS v0.3.2 (https://quintsea.nanraizen.me)
+ * Quintsea CSS v0.3.3 (https://quintsea.nanraizen.me)
  * (c) 2025 | MIT License
  */
 document.addEventListener("DOMContentLoaded", () => {
@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
             t.preventDefault();
             let a = e.getAttribute("href").substring(1),
                 l = document.getElementById(a);
-            l && l.classList.add("open")
+            l && l.classList.toggle("open")
         })
     }), document.querySelectorAll('[data-modal="close"]').forEach(e => {
         e.addEventListener("click", () => {
