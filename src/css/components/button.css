@@ -264,6 +264,10 @@
     display: flex;
 }
 
+.btn.btn-e {
+    --btn-padding: 0;
+}
+
 .btn.text-center {
     justify-content: center;
 }
