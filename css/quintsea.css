@@ -1,5 +1,5 @@
 /*!
- * Quintsea CSS v0.3.4 (https://quintsea.nanraizen.me)
+ * Quintsea CSS v0.3.5 (https://quintsea.nanraizen.me)
  * (c) 2025 | MIT License
  */
 /* ROOT & RESET */
@@ -1735,7 +1735,15 @@ img.img-cover {
     right: 0;
 }
 .navbar.sticky {
+    position: relative;
     z-index: 99993;
+    top: auto;
+    left: unset;
+    right: 0;
+}
+.navbar.sticky.stick {
+    position: fixed;
+    top: 0;
     left: 0;
     right: 0;
 }

@@ -85,26 +85,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	// STICKY
-	function stickyNavbar(el, options = {}) {
-		const defaults = {
-			offset: 0,
-			leftOffset: 'unset',
-		};
-
-		const settings = Object.assign({}, defaults, options);
-		const target = typeof el === 'string' ? document.querySelector(el) : el;
+	document.querySelectorAll('.navbar.sticky').forEach(target => {
 		const parent = target.parentElement;
 		const placeholder = document.createElement('div');
 
 		placeholder.style.width = target.offsetWidth + 'px';
 		placeholder.style.height = target.offsetHeight + 'px';
 		placeholder.style.display = 'none';
-
 		parent.insertBefore(placeholder, target);
-
-		function applyStyle(styles) {
-			Object.assign(target.style, styles);
-		}
 
 		function checkScroll() {
 			const scroll = window.scrollY;
@@ -112,44 +100,23 @@ document.addEventListener('DOMContentLoaded', () => {
 			const parentTop = parent.offsetTop;
 			const parentHeight = parent.offsetHeight;
 
-			if (scroll + settings.offset > parentTop && scroll + settings.offset + height < parentTop + parentHeight) {
-				if (target.style.position !== 'fixed') {
-					applyStyle({
-						position: 'fixed',
-						top: settings.offset + 'px',
-						left: settings.leftOffset + 'px',
-						right: '0',
-						zIndex: 99993
-					});
+			if (scroll > parentTop && scroll + height < parentTop + parentHeight) {
+				if (!target.classList.contains('stick')) {
+					target.classList.add('stick');
 					placeholder.style.display = 'block';
-					target.classList.add('sticky');
 				}
-			} else if (scroll + settings.offset + height >= parentTop + parentHeight) {
-				applyStyle({
-					position: 'absolute',
-					top: (parentHeight - height) + 'px',
-					left: settings.leftOffset + 'px',
-					right: '0',
-					zIndex: 99993
-				});
+			} else if (scroll + height >= parentTop + parentHeight) {
+				target.classList.remove('stick');
 				placeholder.style.display = 'block';
-				target.classList.remove('sticky');
 			} else {
-				applyStyle({
-					position: 'relative',
-					top: 'auto',
-					left: 'unset',
-					right: '0',
-					zIndex: 99993
-				});
+				target.classList.remove('stick');
 				placeholder.style.display = 'none';
-				target.classList.remove('sticky');
 			}
 		}
 
 		window.addEventListener('scroll', checkScroll);
 		checkScroll();
-	}
+	});
 
 	// COLLAPSE
 	document.querySelectorAll('[data-collapse="toggle"]').forEach(toggle => {

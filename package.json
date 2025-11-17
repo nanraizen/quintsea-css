@@ -1,6 +1,6 @@
 {
 	"name": "quintsea-css",
-	"version": "0.3.4",
+	"version": "0.3.5",
 	"description": "A CSS framework built around five aesthetics (4+1), which includes Minimalism (+ dark mode), Neubrutalism, Flat and Retro UI Design.",
 	"keywords": [
 		"css",
@@ -31,20 +31,22 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"version": "npm version",
-		"compile": "postcss src/css/*.css --dir css",
+		"compile": "postcss src/css/quintsea.css --dir css",
 		"compile:addons": "postcss src/css/addons/*.css --dir css/addons",
 		"compile:themes": "postcss src/css/themes/*.css --dir css/themes",
 		"minify": "cleancss css/!(*.min).css --batch --batch-suffix \".min\"",
 		"minify:addons": "cleancss css/addons/!(*.min).css --batch --batch-suffix \".min\"",
 		"minify:themes": "cleancss css/themes/!(*.min).css --batch --batch-suffix \".min\"",
-		"header:js": "node header.js",
-		"build": "npm run compile && npm run minify && npm run compile:themes && npm run minify:themes && npm run compile:addons && npm run minify:addons && npm run header:js"
+		"postprocess:js": "node postprocess.js",
+		"build": "npm run compile && npm run minify && npm run compile:themes && npm run minify:themes && npm run compile:addons && npm run minify:addons && npm run postprocess:js",
+		"build:core": "npm run compile && npm run minify && npm run postprocess:js"
 	},
 	"devDependencies": {
 		"clean-css-cli": "^5.6.3",
 		"postcss": "^8.5.6",
 		"postcss-cli": "^11.0.1",
 		"postcss-header": "^3.0.3",
-		"postcss-import": "^16.1.1"
+		"postcss-import": "^16.1.1",
+		"terser": "^5.44.1"
 	}
 }

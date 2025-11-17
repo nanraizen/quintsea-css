@@ -21,7 +21,16 @@
 }
 
 .navbar.sticky {
+    position: relative;
     z-index: 99993;
+    top: auto;
+    left: unset;
+    right: 0;
+}
+
+.navbar.sticky.stick {
+    position: fixed;
+    top: 0;
     left: 0;
     right: 0;
 }
