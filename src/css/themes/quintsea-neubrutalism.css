@@ -104,21 +104,21 @@ textarea,
 }
 
 .btn.btn-xs,
-.option input + .mark::before,
+.option input+.mark::before,
 .progress,
 progress,
-[data-modal=content] .modal-card > header [data-modal=close] {
+[data-modal=content] .modal-card>header [data-modal=close] {
     box-shadow: 2px 2px 0 0 var(--text);
 }
 
-.option input:checked + .mark::before,
-.option input[role=switch] + .mark::after,
+.option input:checked+.mark::before,
+.option input[role=switch]+.mark::after,
 .navtabs.underline .btn::before {
     background-color: var(--text) !important;
 }
 
-.option input[role=switch]:checked + .mark::after,
-.option input[type=radio] + .mark::after {
+.option input[role=switch]:checked+.mark::after,
+.option input[type=radio]+.mark::after {
     background-color: var(--bg) !important;
 }
 
@@ -137,21 +137,21 @@ select:disabled,
 textarea:disabled,
 textarea:read-only,
 .placeholder,
-.option input + .mark::before,
-[data-modal=content] .modal-card > header,
-[data-modal=content] .modal-card > footer,
+.option input+.mark::before,
+[data-modal=content] .modal-card>header,
+[data-modal=content] .modal-card>footer,
 table th,
 table td,
 .table-frame,
 .group.btn-o,
-.group > label,
+.group>label,
 [data-dropdown=content],
 .navtabs.underline .btn::after {
     border-color: var(--text) !important;
 }
 
 [data-dropdown=content] nav [class=btn],
-[data-dropdown=content] nav [class ~ ='current'],
+[data-dropdown=content] nav [class~='current'],
 [data-dropdown=content] nav [class='btn active'] {
     border-color: transparent;
 }
@@ -169,10 +169,10 @@ progress,
 figcaption,
 .floating-label label.clone,
 .copy-notif .glyph,
-.navtabs > .btn.active,
-.navtabs.underline > .btn,
-.navtabs.underline > .btn:hover,
-.navtabs.underline > .btn.active {
+.navtabs>.btn.active,
+.navtabs.underline>.btn,
+.navtabs.underline>.btn:hover,
+.navtabs.underline>.btn.active {
     color: var(--text) !important;
 }
 
@@ -189,8 +189,8 @@ select:disabled,
 textarea:disabled,
 textarea:read-only,
 .placeholder,
-.option input:checked + .mark::before,
-.group > *,
+.option input:checked+.mark::before,
+.group>*,
 .underline input,
 .underline select,
 .underline textarea,
@@ -207,13 +207,13 @@ textarea:read-only,
 }
 
 .btn.btn-xs:active,
-[data-modal=content] .modal-card > header [data-modal=close]:active {
+[data-modal=content] .modal-card>header [data-modal=close]:active {
     box-shadow: unset;
     transform: translate(2px, 2px);
 }
 
 .btn.btn-i:active,
-.group > *,
+.group>*,
 [data-dropdown=content] nav .btn:active,
 .navtabs.underline .btn {
     transform: unset !important;
@@ -231,32 +231,32 @@ input[type=range]::-moz-range-thumb {
     border-image: linear-gradient(90deg, var(--text) 50%, var(--mono-30) 0) 0 1 / calc(50% - 1px) 100vw / 0 calc(100vw);
 }
 
-input[type=range] + .range-value {
+input[type=range]+.range-value {
     background-color: var(--text);
     border: unset;
     color: var(--bg);
 }
 
-.option input[type=checkbox]:not([role=switch]) + .mark::after {
+.option input[type=checkbox]:not([role=switch])+.mark::after {
     filter: var(--brightness);
 }
 
-.show-percent > *::before,
+.show-percent>*::before,
 progress.show-percent::before {
     top: 0;
     right: 0;
     background-color: transparent;
 }
 
-.group:not(.btn-o) > *:nth-child(n+2) {
+.group:not(.btn-o)>*:nth-child(n+2) {
     margin-left: var(--stroke-min) !important;
 }
 
-.accordion > .btn[data-accordion=toggle]:not(.btn-t):nth-child(n+2) {
+.accordion>.btn[data-accordion=toggle]:not(.btn-t):nth-child(n+2) {
     margin-top: var(--stroke-min);
 }
 
-.accordion > .btn[data-accordion=toggle]:not(.btn-t).expand + [data-accordion=content] + [data-accordion=toggle]:nth-child(n+2) {
+.accordion>.btn[data-accordion=toggle]:not(.btn-t).expand+[data-accordion=content]+[data-accordion=toggle]:nth-child(n+2) {
     margin-top: 0;
 }
 

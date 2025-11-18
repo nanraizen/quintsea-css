@@ -1,5 +1,5 @@
 /*!
- * Quintsea CSS v0.3.6 (https://quintsea.nanraizen.me)
+ * Quintsea CSS v0.3.7 (https://quintsea.nanraizen.me)
  * (c) 2025 | MIT License
  */
 /* ROOT & RESET */
@@ -1016,7 +1016,7 @@ label {
     white-space: nowrap;
 }
 .glyph.fill {
-    font-variation-settings: 'FILL' 1 !important;
+    font-variation-settings: 'FILL'1 !important;
 }
 .glyph.new {
     position: relative;
