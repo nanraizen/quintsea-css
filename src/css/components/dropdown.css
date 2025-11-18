@@ -76,20 +76,20 @@
 }
 
 [data-dropdown=content] nav [class=btn],
-[data-dropdown=content] nav [class~='current'],
+[data-dropdown=content] nav [class ~ ='current'],
 [data-dropdown=content] nav [class='btn active'] {
     background-color: transparent;
     color: var(--text) !important;
 }
 
-[data-dropdown=content] nav [class~='current'],
+[data-dropdown=content] nav [class ~ ='current'],
 [data-dropdown=content] nav [class='btn active'] {
-    font-variation-settings: 'FILL'1;
+    font-variation-settings: 'FILL' 1;
     color: var(--color-darker) !important;
 }
 
 [data-dropdown=content] nav [class=btn]:hover,
-[data-dropdown=content] nav [class~='current']:hover,
+[data-dropdown=content] nav [class ~ ='current']:hover,
 [data-dropdown=content] nav [class='btn active']:hover {
     background-color: var(--color-20);
     color: var(--color-darker) !important;
@@ -110,7 +110,7 @@
     background-color: unset;
 }
 
-[data-dropdown=content] nav .title+.btn-i {
+[data-dropdown=content] nav .title + .btn-i {
     padding-top: 8px;
 }
 
@@ -135,11 +135,11 @@
 
 .dropdown [data-dropdown=toggle].btn:not(.btn-o) .caret,
 .dropdown [data-dropdown=toggle].btn:not(.btn-l) .caret {
-    filter: var(--brigtness);
+    filter: var(--brightness);
 }
 
 .dropdown [data-dropdown=toggle].btn.default .caret {
-    filter: var(--brigtness-reverse);
+    filter: var(--brightness-reverse);
 }
 
 .dropup [data-dropdown=content] {

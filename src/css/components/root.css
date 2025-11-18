@@ -17,7 +17,7 @@
     --radius-md: 12px;
     --radius-lg: 16px;
     --radius-xl: 24px;
-    --navbar-gap:36px;
+    --navbar-gap: 36px;
     --backdrop: rgba(24, 24, 27, .6);
     --backdrop-alt: rgba(24, 24, 27, .75);
     --tooltip: rgba(24, 24, 27, .75);
@@ -45,8 +45,8 @@
     --text-reverse: #FCFAFB;
     --text2-reverse: #FFFFFF;
     --odd: var(--mono-10);
-    --brigtness: brightness(5);
-    --brigtness-reverse: unset;
+    --brightness: brightness(5);
+    --brightness-reverse: unset;
     --white: #FCFAFB;
     --white-10: #FCFAFB0D;
     --white-20: #FCFAFB26;

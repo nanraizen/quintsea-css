@@ -1,5 +1,5 @@
 .caret {
-    filter: var(--brigtness-reverse);
+    filter: var(--brightness-reverse);
     display: flex;
     position: relative;
     width: 20px;
@@ -44,7 +44,7 @@
 }
 
 .glyph.fill {
-    font-variation-settings: 'FILL'1 !important;
+    font-variation-settings: 'FILL' 1 !important;
 }
 
 .glyph.new {
