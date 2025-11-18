@@ -3174,7 +3174,7 @@ label+.helpblock {
     margin-right: -2px;
     margin-left: -2px;
 }
-[data-dropdown=content] nav [class=btn],
+[data-dropdown=content] nav [class=btn]:not(.btn-f),
 [data-dropdown=content] nav [class~='current'],
 [data-dropdown=content] nav [class='btn active'] {
     background-color: transparent;
@@ -3185,7 +3185,7 @@ label+.helpblock {
     font-variation-settings: 'FILL'1;
     color: var(--color-darker) !important;
 }
-[data-dropdown=content] nav [class=btn]:hover,
+[data-dropdown=content] nav [class=btn]:not(.btn-f):hover,
 [data-dropdown=content] nav [class~='current']:hover,
 [data-dropdown=content] nav [class='btn active']:hover {
     background-color: var(--color-20);
