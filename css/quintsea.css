@@ -3174,24 +3174,26 @@ label+.helpblock {
     margin-right: -2px;
     margin-left: -2px;
 }
-[data-dropdown=content] nav [class=btn]:not(.btn-f),
-[data-dropdown=content] nav [class~='current'],
-[data-dropdown=content] nav [class='btn active'] {
+[data-dropdown=content] nav .btn:not(.btn-f),
+[data-dropdown=content] nav .btn.active:not(.btn-f),
+[data-dropdown=content] nav .btn.current {
     background-color: transparent;
     color: var(--text) !important;
 }
-[data-dropdown=content] nav [class~='current'],
-[data-dropdown=content] nav [class='btn active'] {
+[data-dropdown=content] nav .btn.active,
+[data-dropdown=content] nav .btn.current {
     font-variation-settings: 'FILL'1;
+}
+[data-dropdown=content] nav .btn.current {
     color: var(--color-darker) !important;
 }
-[data-dropdown=content] nav [class=btn]:not(.btn-f):hover,
-[data-dropdown=content] nav [class~='current']:hover,
-[data-dropdown=content] nav [class='btn active']:hover {
+[data-dropdown=content] nav .btn:not(.btn-f):hover,
+[data-dropdown=content] nav .btn.active:not(.btn-f):hover,
+[data-dropdown=content] nav .btn.current:hover {
     background-color: var(--color-20);
     color: var(--color-darker) !important;
 }
-[data-dropdown=content] nav [class=btn]:hover:after,
+[data-dropdown=content] nav .btn:hover:after,
 [data-dropdown=content] nav .btn.active::after,
 [data-dropdown=content] nav .btn.current::after {
     opacity: 1;
