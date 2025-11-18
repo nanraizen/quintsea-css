@@ -3222,7 +3222,7 @@ label+.helpblock {
     right: 0;
     min-width: unset;
 }
-.dropdown [data-dropdown=toggle].btn:not(.btn-o):not(.btn-l):not(.btn-t) .caret {
+.dropdown [data-dropdown=toggle].btn:not(.btn-o):not(.btn-l):not(.btn-t):not(.default) .caret {
     filter: var(--brightness);
 }
 .dropdown [data-dropdown=toggle].btn.default .caret {
