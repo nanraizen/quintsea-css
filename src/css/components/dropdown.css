@@ -31,6 +31,9 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    align-items: unset;
+    gap: unset;
+    margin: unset;
 }
 
 [data-dropdown=content] nav hr {
