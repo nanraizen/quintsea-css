@@ -1839,6 +1839,7 @@ img.img-cover {
 }
 .navbar nav .caret {
     margin-left: -6px;
+    margin-top: -1px;
 }
 .navbar nav .divider {
     display: block;
