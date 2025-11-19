@@ -1,6 +1,6 @@
 .secondary {
-    --color: var(--mono-50);
-    --color-dark: var(--mono-50);
+    --color: var(--mono-60);
+    --color-dark: var(--mono-60);
 }
 
 .default {

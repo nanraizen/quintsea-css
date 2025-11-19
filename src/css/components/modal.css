@@ -10,7 +10,7 @@
     right: 0;
     opacity: 0;
     padding: 16px;
-    transition: opacity .2s ease;
+    transition: opacity .15s ease;
     background-color: var(--backdrop);
     line-height: 1.75;
 }
@@ -39,7 +39,7 @@
     max-width: 480px;
     max-height: 100%;
     margin: auto;
-    transition: transform .2s var(--cubic), opacity .2s var(--cubic);
+    transition: transform .15s var(--cubic), opacity .15s var(--cubic);
     background-color: var(--dropdown);
     border-radius: var(--radius-lg);
 }

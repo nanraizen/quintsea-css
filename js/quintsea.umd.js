@@ -1,5 +1,5 @@
 /*!
- * Quintsea CSS v0.3.7 (https://quintsea.nanraizen.me)
+ * Quintsea CSS v0.4.0 (https://quintsea.nanraizen.me)
  * (c) 2025 | MIT License
  */
 !function(e, t) {
@@ -61,12 +61,13 @@
       const t = e.parentElement, o = document.createElement("div");
       function a() {
         const a = window.scrollY, n = e.offsetHeight, c = t.offsetTop, l = t.offsetHeight;
-        a > c && a + n < c + l ? e.classList.contains("stick") || (e.classList.add("stick"), 
-        o.style.display = "block") : a + n >= c + l ? (e.classList.remove("stick"), o.style.display = "block") : (e.classList.remove("stick"), 
+        a > c && a + n < c + l ? (e.classList.add("stick"), e.classList.remove("end"), o.style.display = "block") : a + n >= c + l ? (e.classList.remove("stick"), 
+        e.classList.add("end"), o.style.display = "block") : (e.classList.remove("stick", "end"), 
         o.style.display = "none");
       }
       o.style.width = e.offsetWidth + "px", o.style.height = e.offsetHeight + "px", o.style.display = "none", 
-      t.insertBefore(o, e), window.addEventListener("scroll", a), a();
+      t.insertBefore(o, e), window.addEventListener("scroll", a), window.addEventListener("resize", a), 
+      a();
     }), document.querySelectorAll('[data-collapse="toggle"]').forEach(e => {
       e.addEventListener("click", t => {
         t.preventDefault();

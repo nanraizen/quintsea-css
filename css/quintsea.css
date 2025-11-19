@@ -1,5 +1,5 @@
 /*!
- * Quintsea CSS v0.3.7 (https://quintsea.nanraizen.me)
+ * Quintsea CSS v0.4.0 (https://quintsea.nanraizen.me)
  * (c) 2025 | MIT License
  */
 /* ROOT & RESET */
@@ -610,8 +610,8 @@ hr.hr-v {
 }
 /* BASE */
 .secondary {
-    --color: var(--mono-50);
-    --color-dark: var(--mono-50);
+    --color: var(--mono-60);
+    --color-dark: var(--mono-60);
 }
 .default {
     --color: var(--default);
@@ -1744,6 +1744,12 @@ img.img-cover {
 .navbar.sticky.stick {
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
+}
+.navbar.sticky.end {
+    position: absolute;
+    bottom: 0;
     left: 0;
     right: 0;
 }
@@ -2999,7 +3005,7 @@ label+.helpblock {
     right: 0;
     opacity: 0;
     padding: 16px;
-    transition: opacity .2s ease;
+    transition: opacity .15s ease;
     background-color: var(--backdrop);
     line-height: 1.75;
 }
@@ -3026,7 +3032,7 @@ label+.helpblock {
     max-width: 480px;
     max-height: 100%;
     margin: auto;
-    transition: transform .2s var(--cubic), opacity .2s var(--cubic);
+    transition: transform .15s var(--cubic), opacity .15s var(--cubic);
     background-color: var(--dropdown);
     border-radius: var(--radius-lg);
 }
@@ -3117,11 +3123,11 @@ label+.helpblock {
     z-index: 98;
     top: 100%;
     opacity: 0;
-    transform: scale(.95);
+    transform: translateY(12px);
     min-width: 280px;
     margin: 4px 0;
     padding: 16px;
-    transition: opacity .2s var(--cubic), transform .2s var(--cubic);
+    transition: opacity .15s var(--cubic), transform .15s var(--cubic);
     background-color: var(--dropdown) !important;
     border: 2px solid var(--color);
     border-radius: var(--radius-md);
@@ -3130,7 +3136,7 @@ label+.helpblock {
 [data-dropdown=content].open {
     pointer-events: auto;
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0) !important;
 }
 [data-dropdown=content] nav {
     display: flex;
@@ -3211,10 +3217,10 @@ label+.helpblock {
 }
 .dropdown.center [data-dropdown=content] {
     left: 50%;
-    transform: translateX(-50%) scale(.95);
+    transform: translate(-50%, 12px);
 }
 .dropdown.center [data-dropdown=content].open {
-    transform: translateX(-50%) scale(1);
+    transform: translate(-50%, 0) !important;
 }
 .dropdown.right [data-dropdown=content] {
     right: 0;
@@ -3233,6 +3239,10 @@ label+.helpblock {
 .dropup [data-dropdown=content] {
     top: unset;
     bottom: 100%;
+    transform: translateY(-12px);
+}
+.dropup.center [data-dropdown=content] {
+    transform: translate(-50%, -12px);
 }
 .dropup .caret {
     transform: rotate(-180deg);

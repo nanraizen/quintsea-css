@@ -35,6 +35,13 @@
     right: 0;
 }
 
+.navbar.sticky.end {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
 .navbar.color {
     background-color: var(--color);
 }

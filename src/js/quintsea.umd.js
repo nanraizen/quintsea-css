@@ -112,20 +112,21 @@
 				const parentHeight = parent.offsetHeight;
 
 				if (scroll > parentTop && scroll + height < parentTop + parentHeight) {
-					if (!target.classList.contains('stick')) {
-						target.classList.add('stick');
-						placeholder.style.display = 'block';
-					}
+					target.classList.add('stick');
+					target.classList.remove('end');
+					placeholder.style.display = 'block';
 				} else if (scroll + height >= parentTop + parentHeight) {
 					target.classList.remove('stick');
+					target.classList.add('end');
 					placeholder.style.display = 'block';
 				} else {
-					target.classList.remove('stick');
+					target.classList.remove('stick', 'end');
 					placeholder.style.display = 'none';
 				}
 			}
 
 			window.addEventListener('scroll', checkScroll);
+			window.addEventListener('resize', checkScroll);
 			checkScroll();
 		});
 

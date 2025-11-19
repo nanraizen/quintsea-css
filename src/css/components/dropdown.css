@@ -10,11 +10,11 @@
     z-index: 98;
     top: 100%;
     opacity: 0;
-    transform: scale(.95);
+    transform: translateY(12px);
     min-width: 280px;
     margin: 4px 0;
     padding: 16px;
-    transition: opacity .2s var(--cubic), transform .2s var(--cubic);
+    transition: opacity .15s var(--cubic), transform .15s var(--cubic);
     background-color: var(--dropdown) !important;
     border: 2px solid var(--color);
     border-radius: var(--radius-md);
@@ -24,7 +24,7 @@
 [data-dropdown=content].open {
     pointer-events: auto;
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0) !important;
 }
 
 [data-dropdown=content] nav {
@@ -119,11 +119,11 @@
 
 .dropdown.center [data-dropdown=content] {
     left: 50%;
-    transform: translateX(-50%) scale(.95);
+    transform: translate(-50%, 12px);
 }
 
 .dropdown.center [data-dropdown=content].open {
-    transform: translateX(-50%) scale(1);
+    transform: translate(-50%, 0) !important;
 }
 
 .dropdown.right [data-dropdown=content] {
@@ -147,6 +147,11 @@
 .dropup [data-dropdown=content] {
     top: unset;
     bottom: 100%;
+    transform: translateY(-12px);
+}
+
+.dropup.center [data-dropdown=content] {
+    transform: translate(-50%, -12px);
 }
 
 .dropup .caret {
