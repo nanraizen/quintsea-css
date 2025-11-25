@@ -19,8 +19,9 @@
     --radius-md: 12px;
     --radius-lg: 16px;
     --radius-xl: 24px;
-    --navbar-gap: 36px;
+    --navbar-padding: 36px;
     --navbar-spacing: 8px;
+    --navbar-gap: 24px;
     --backdrop: rgba(24, 24, 27, .6);
     --backdrop-alt: rgba(24, 24, 27, .75);
     --tooltip: rgba(24, 24, 27, .75);

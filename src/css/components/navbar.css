@@ -1,11 +1,11 @@
 .navbar {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--navbar-gap);
+    column-gap: var(--navbar-padding);
     position: relative;
     z-index: 99991;
     min-width: 0;
-    padding: var(--navbar-spacing) var(--navbar-gap);
+    padding: var(--navbar-spacing) var(--navbar-padding);
     font-size: 14px;
 }
 
@@ -56,21 +56,23 @@
     color: var(--text-reverse) !important;
 }
 
-.navbar.color>* *:not(.dropdown):hover a {
-    opacity: .85;
-}
-
-.navbar.color *:not(.dropdown) a:hover {
-    opacity: 1;
+.navbar.color a:not(.btn):hover {
+    opacity: .75;
 }
 
 .navbar>.container,
 .navbar>.fluid {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--navbar-gap);
+    gap: var(--navbar-padding);
     width: 100%;
     min-width: 0;
+}
+
+.navbar.sticky>.container {
+    max-width: var(--container);
+    padding-right: 0;
+    padding-left: 0;
 }
 
 .container .navbar.sticky.fix {
@@ -80,14 +82,14 @@
 
 .container .navbar.fluid.sticky:not(.fix) {
     max-width: unset;
-    margin-right: -36px;
-    margin-left: -36px;
+    margin-right: calc(var(--container-padding) * -1);
+    margin-left: calc(var(--container-padding) * -1);
 }
 
 .container .navbar:not(.fluid).sticky.fix {
-    clip-path: inset(0 36px);
-    border-right: 36px solid transparent;
-    border-left: 36px solid transparent;
+    clip-path: inset(0 var(--container-padding));
+    border-right: var(--container-padding) solid transparent;
+    border-left: var(--container-padding) solid transparent;
 }
 
 .navbar-logo {
@@ -112,18 +114,11 @@
     color: var(--primary) !important;
 }
 
-.navbar section {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--navbar-gap);
-    flex: 1;
-}
-
 .navbar nav {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 24px;
+    gap: var(--navbar-gap);
     position: relative;
     margin: auto 0;
 }
@@ -147,7 +142,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 24px;
+    gap: var(--navbar-gap);
 }
 
 .navbar nav ul li {
