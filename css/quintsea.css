@@ -1788,7 +1788,7 @@ img.img-cover {
     margin-left: calc(var(--container-padding) * -1);
 }
 .container .navbar:not(.fluid).sticky.fix {
-    clip-path: inset(0 var(--container-padding));
+    clip-path: inset(auto var(--container-padding));
     border-right: var(--container-padding) solid transparent;
     border-left: var(--container-padding) solid transparent;
 }
