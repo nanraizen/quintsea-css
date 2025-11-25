@@ -290,6 +290,10 @@ label+.helpblock {
     padding-left: calc(20px + 24px + 16px);
 }
 
+.flex-1 .input-icon {
+    width: 100%;
+}
+
 .form-hz fieldset {
     flex-direction: row;
     gap: 24px;

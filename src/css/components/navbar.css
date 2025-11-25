@@ -1,8 +1,11 @@
 .navbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--navbar-gap);
     position: relative;
     z-index: 99991;
-    padding: 8px var(--navbar-gap);
-    background-color: var(--card);
+    min-width: 0;
+    padding: var(--navbar-spacing) var(--navbar-gap);
     font-size: 14px;
 }
 
@@ -12,6 +15,7 @@
     top: 0;
     left: 0;
     right: 0;
+    background-color: var(--card);
 }
 
 .navbar.absolute {
@@ -26,9 +30,10 @@
     top: auto;
     left: unset;
     right: 0;
+    background-color: var(--card);
 }
 
-.navbar.sticky.stick {
+.navbar.sticky.fix {
     position: fixed;
     top: 0;
     left: 0;
@@ -64,7 +69,25 @@
     display: flex;
     flex-wrap: wrap;
     gap: var(--navbar-gap);
+    width: 100%;
     min-width: 0;
+}
+
+.container .navbar.sticky.fix {
+    max-width: calc(var(--container) + var(--container-padding) + var(--container-padding));
+    margin: 0 auto;
+}
+
+.container .navbar.fluid.sticky:not(.fix) {
+    max-width: unset;
+    margin-right: -36px;
+    margin-left: -36px;
+}
+
+.container .navbar:not(.fluid).sticky.fix {
+    clip-path: inset(0 36px);
+    border-right: 36px solid transparent;
+    border-left: 36px solid transparent;
 }
 
 .navbar-logo {
@@ -147,7 +170,6 @@
 
 .navbar nav .caret {
     margin-left: -6px;
-    margin-top: -1px;
 }
 
 .navbar nav .divider {
@@ -166,4 +188,8 @@
     background-color: var(--mono-30);
     border-left: 0;
     border-radius: 50%;
+}
+
+.navbar.color .glyph.new::after {
+    border-color: var(--color);
 }

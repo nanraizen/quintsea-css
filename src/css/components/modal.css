@@ -8,7 +8,6 @@
     bottom: 0;
     left: 0;
     right: 0;
-    visibility: hidden;
     opacity: 0;
     padding: 16px;
     transition: opacity .15s ease;
@@ -101,8 +100,7 @@
 }
 
 [data-modal=content].open {
-    pointer-events: auto;
-    visibility: visible;
+    pointer-events: unset;
     opacity: 1;
 }
 

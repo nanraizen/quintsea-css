@@ -101,15 +101,15 @@ document.addEventListener('DOMContentLoaded', () => {
 			const parentHeight = parent.offsetHeight;
 
 			if (scroll > parentTop && scroll + height < parentTop + parentHeight) {
-				target.classList.add('stick');
+				target.classList.add('fix');
 				target.classList.remove('end');
 				placeholder.style.display = 'block';
 			} else if (scroll + height >= parentTop + parentHeight) {
-				target.classList.remove('stick');
+				target.classList.remove('fix');
 				target.classList.add('end');
 				placeholder.style.display = 'block';
 			} else {
-				target.classList.remove('stick', 'end');
+				target.classList.remove('fix', 'end');
 				placeholder.style.display = 'none';
 			}
 		}

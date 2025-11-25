@@ -1,5 +1,5 @@
 /*!
- * Quintsea CSS v0.4.0 (https://quintsea.nanraizen.me)
+ * Quintsea CSS v0.4.1 (https://quintsea.nanraizen.me)
  * (c) 2025 | MIT License
  */
 !function(e, t) {
@@ -61,8 +61,8 @@
       const t = e.parentElement, o = document.createElement("div");
       function a() {
         const a = window.scrollY, n = e.offsetHeight, c = t.offsetTop, l = t.offsetHeight;
-        a > c && a + n < c + l ? (e.classList.add("stick"), e.classList.remove("end"), o.style.display = "block") : a + n >= c + l ? (e.classList.remove("stick"), 
-        e.classList.add("end"), o.style.display = "block") : (e.classList.remove("stick", "end"), 
+        a > c && a + n < c + l ? (e.classList.add("fix"), e.classList.remove("end"), o.style.display = "block") : a + n >= c + l ? (e.classList.remove("fix"), 
+        e.classList.add("end"), o.style.display = "block") : (e.classList.remove("fix", "end"), 
         o.style.display = "none");
       }
       o.style.width = e.offsetWidth + "px", o.style.height = e.offsetHeight + "px", o.style.display = "none", 

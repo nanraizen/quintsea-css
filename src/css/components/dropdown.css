@@ -22,7 +22,7 @@
 }
 
 [data-dropdown=content].open {
-    pointer-events: auto;
+    pointer-events: unset;
     opacity: 1;
     transform: translateY(0) !important;
 }
@@ -156,4 +156,5 @@
 
 .dropup .caret {
     transform: rotate(-180deg);
+    margin-top: -1px;
 }

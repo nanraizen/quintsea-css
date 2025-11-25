@@ -1,5 +1,5 @@
 /*!
- * Quintsea CSS v0.4.0 (https://quintsea.nanraizen.me)
+ * Quintsea CSS v0.4.1 (https://quintsea.nanraizen.me)
  * (c) 2025 | MIT License
  */
 document.addEventListener("DOMContentLoaded", () => {
@@ -48,17 +48,17 @@ document.addEventListener("DOMContentLoaded", () => {
       const o = document.createElement("p");
       o.className = "range-value", e.appendChild(o);
       const a = () => {
-        const e = +t.min || 0, a = +t.max || 100, c = +t.value, n = (c - e) / (a - e) * (t.offsetWidth - 16) + 8;
-        o.textContent = c, o.style.left = n + "px";
+        const e = +t.min || 0, a = +t.max || 100, n = +t.value, c = (n - e) / (a - e) * (t.offsetWidth - 16) + 8;
+        o.textContent = n, o.style.left = c + "px";
       };
       t.addEventListener("input", a), a();
     }
   }), document.querySelectorAll(".navbar.sticky").forEach(e => {
     const t = e.parentElement, o = document.createElement("div");
     function a() {
-      const a = window.scrollY, c = e.offsetHeight, n = t.offsetTop, l = t.offsetHeight;
-      a > n && a + c < n + l ? (e.classList.add("stick"), e.classList.remove("end"), o.style.display = "block") : a + c >= n + l ? (e.classList.remove("stick"), 
-      e.classList.add("end"), o.style.display = "block") : (e.classList.remove("stick", "end"), 
+      const a = window.scrollY, n = e.offsetHeight, c = t.offsetTop, l = t.offsetHeight;
+      a > c && a + n < c + l ? (e.classList.add("fix"), e.classList.remove("end"), o.style.display = "block") : a + n >= c + l ? (e.classList.remove("fix"), 
+      e.classList.add("end"), o.style.display = "block") : (e.classList.remove("fix", "end"), 
       o.style.display = "none");
     }
     o.style.width = e.offsetWidth + "px", o.style.height = e.offsetHeight + "px", o.style.display = "none", 
@@ -89,18 +89,18 @@ document.addEventListener("DOMContentLoaded", () => {
   }), document.querySelectorAll(".navtabs[data-tab-name]").forEach(e => {
     const t = document.querySelector('.navtabs-content[data-tab-name="' + e.getAttribute("data-tab-name") + '"]'), o = Array.from(e.children), a = Array.from(t.children);
     if (!t) return;
-    const c = e => {
+    const n = e => {
       o.forEach(e => e.classList.remove("active")), e.classList.add("active"), a.forEach(e => e.classList.remove("active"));
-      const c = e.getAttribute("href").substring(1), n = t.querySelector("#" + c);
-      n && n.classList.add("active");
+      const n = e.getAttribute("href").substring(1), c = t.querySelector("#" + n);
+      c && c.classList.add("active");
     };
     o.forEach(e => {
       e.addEventListener("click", t => {
-        t.preventDefault(), c(e);
+        t.preventDefault(), n(e);
       });
     });
-    const n = o.find(e => e.classList.contains("active")) || o[0];
-    n && c(n);
+    const c = o.find(e => e.classList.contains("active")) || o[0];
+    c && n(c);
   }), document.querySelectorAll('[data-modal="content"]').forEach(e => {
     if (e.querySelector(".modal-card")) return;
     const t = document.createElement("div"), o = document.createElement("div"), a = e.getAttribute("data-modal-size");
@@ -138,12 +138,12 @@ document.addEventListener("DOMContentLoaded", () => {
       a || (a = document.createElement("div"), a.className = "tooltip-text", a.textContent = e.getAttribute("data-tooltip-text"), 
       e.appendChild(a), a.offsetHeight), a.classList.add("show");
     }), e.addEventListener("mouseleave", () => {
-      const a = e.querySelector(".tooltip-text"), c = a && a.textContent.startsWith("Copied");
+      const a = e.querySelector(".tooltip-text"), n = a && a.textContent.startsWith("Copied");
       a && (o = setTimeout(() => {
         a.classList.remove("show"), t = setTimeout(() => {
           a.remove();
         }, 150);
-      }, c ? 1500 : 0));
+      }, n ? 1500 : 0));
     });
   }), document.querySelectorAll(".copyBtn").forEach(e => {
     const t = e.getAttribute("data-copy-text") || "";
@@ -167,26 +167,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const o = e.getAttribute("data-copy-text") || "";
     e.addEventListener("click", () => t(o));
   });
-  const o = document.documentElement, a = document.querySelectorAll("[data-theme-trigger]"), c = window.matchMedia("(prefers-color-scheme: dark)");
-  function n(e) {
+  const o = document.documentElement, a = document.querySelectorAll("[data-theme-trigger]"), n = window.matchMedia("(prefers-color-scheme: dark)");
+  function c(e) {
     let t = e;
     if ("light" === e) o.setAttribute("data-theme", "light"); else if ("dark" === e) o.setAttribute("data-theme", "dark"); else {
-      const e = c.matches ? "dark" : "light";
+      const e = n.matches ? "dark" : "light";
       o.setAttribute("data-theme", e), t = "system";
     }
     a.forEach(e => {
       e.classList.toggle("active", e.dataset.themeTrigger === t);
     });
   }
-  n(localStorage.getItem("theme") || "system"), a.forEach(e => {
+  c(localStorage.getItem("theme") || "system"), a.forEach(e => {
     e.addEventListener("click", () => {
       const t = e.dataset.themeTrigger;
       if ("toggle" === t) {
-        const e = "dark" === (o.getAttribute("data-theme") || (c.matches ? "dark" : "light")) ? "light" : "dark";
-        localStorage.setItem("theme", e), n(e);
-      } else localStorage.setItem("theme", t), n(t);
+        const e = "dark" === (o.getAttribute("data-theme") || (n.matches ? "dark" : "light")) ? "light" : "dark";
+        localStorage.setItem("theme", e), c(e);
+      } else localStorage.setItem("theme", t), c(t);
     });
-  }), c.addEventListener("change", () => {
-    "system" === localStorage.getItem("theme") && n("system");
+  }), n.addEventListener("change", () => {
+    "system" === localStorage.getItem("theme") && c("system");
   });
 });
