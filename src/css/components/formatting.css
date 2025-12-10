@@ -134,7 +134,8 @@
 .formatting h2,
 .formatting h3,
 .formatting h4,
-.formatting h5 {
+.formatting h5,
+.formatting h6 {
     margin-bottom: 16px;
 }
 

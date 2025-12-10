@@ -1,5 +1,5 @@
 /*!
- * Quintsea CSS v0.4.4 (https://quintsea.nanraizen.me)
+ * Quintsea CSS v0.4.5 (https://quintsea.nanraizen.me)
  * (c) 2025 | MIT License
  */
 /* ROOT & RESET */
@@ -1653,7 +1653,8 @@ label {
 .formatting h2,
 .formatting h3,
 .formatting h4,
-.formatting h5 {
+.formatting h5,
+.formatting h6 {
     margin-bottom: 16px;
 }
 .formatting>*:first-child {
