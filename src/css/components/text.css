@@ -91,7 +91,7 @@
     text-transform: capitalize;
 }
 
-.text-hoverline:hover {
+.text-underline:hover {
     text-underline-offset: 6px;
     text-decoration: underline;
 }
@@ -102,4 +102,18 @@
 
 .text-regular {
     font-weight: var(--font-regular);
+}
+
+.text-italic {
+    font-style: italic;
+}
+
+.text-bold {
+    font-weight: var(--font-semibold);
+}
+
+.text-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }

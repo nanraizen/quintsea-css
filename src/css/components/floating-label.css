@@ -5,6 +5,7 @@
 }
 
 .floating-label label {
+    will-change: opacity, transform;
     display: flex;
     align-items: center;
     position: absolute;
@@ -29,10 +30,11 @@
     top: -10px;
     opacity: 0;
     transform: translateX(20px);
+    width: fit-content;
     height: auto;
     background-color: var(--card);
     border-radius: 4px !important;
-    font-size: 12px;
+    font-size: var(--font-size-sm);
     line-height: 1;
     color: var(--mono-50);
 }
@@ -55,6 +57,14 @@
 .floating-label>*:not(label):not(:placeholder-shown)+label+label.clone {
     opacity: 1;
     transform: translateX(0);
+}
+
+.floating-label.input-icon .glyph~label {
+    left: 56px;
+}
+
+.floating-label.input-icon .glyph~select {
+    padding-left: calc(20px + 24px + 16px);
 }
 
 .underline .floating-label label,

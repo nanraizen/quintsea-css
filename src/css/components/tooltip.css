@@ -5,7 +5,7 @@
     overflow-wrap: break-word;
     backdrop-filter: blur(2px);
     pointer-events: none;
-    will-change: transform, opacity;
+    will-change: opacity, transform;
     position: absolute;
     z-index: 999;
     opacity: 0;
@@ -16,7 +16,7 @@
     transition: opacity .2s var(--cubic), transform .2s var(--cubic);
     background: var(--tooltip);
     border-radius: var(--radius-sm);
-    font-size: 12px;
+    font-size: var(--font-size-sm);
     font-weight: var(--font-regular);
     line-height: 1.4;
     color: var(--text-reverse);

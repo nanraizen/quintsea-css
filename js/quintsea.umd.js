@@ -1,5 +1,5 @@
 /*!
- * Quintsea CSS v0.4.1 (https://quintsea.nanraizen.me)
+ * Quintsea CSS v0.4.4 (https://quintsea.nanraizen.me)
  * (c) 2025 | MIT License
  */
 !function(e, t) {

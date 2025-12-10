@@ -20,28 +20,29 @@
     flex: 1 !important;
 }
 
-.flex fieldset,
-.flex .floating-label,
-.flex-v fieldset,
-.flex-v .floating-label {
-    margin: 0 !important;
+.flex fieldset:nth-of-type(n+2),
+.flex .floating-label:nth-of-type(n+2),
+.flex-v fieldset:nth-of-type(n+2),
+.flex-v .floating-label:nth-of-type(n+2) {
+    margin-top: 0;
 }
 
-.group {
-    width: fit-content;
+.group:not(.w-fit)>*:not(.btn):not(label) {
+    flex: 1;
 }
 
 .group>label {
     display: flex;
     align-items: center;
     padding: 0 20px;
-    border: var(--stroke) solid var(--mono-30);
+    border: var(--stroke) solid var(--stroke-color);
     border-radius: var(--radius-md);
     font-weight: initial;
     line-height: 1;
 }
 
-.group>*:not(:first-child):not(:last-child) {
+.group>*:not(:first-child):not(:last-child),
+.group>*:not(:first-child):not(:last-child)>* {
     border-radius: 0;
 }
 
@@ -61,8 +62,9 @@
 .group>input:nth-child(n+2),
 .group>select:nth-child(n+2),
 .group>label:nth-child(n+2),
-.group>.floating-label:nth-child(n+2) {
-    margin-left: var(--stroke-min) !important;
+.group>.floating-label:nth-child(n+2),
+.group>.input-icon:nth-child(n+2) {
+    margin-left: calc(var(--stroke) * -1) !important;
 }
 
 .group>*:hover {
@@ -83,6 +85,10 @@
 
 .group.btn-o.btn-p {
     border-radius: 99px;
+}
+
+.group.w-100>.btn-b {
+    flex: 1;
 }
 
 .underline .group label {

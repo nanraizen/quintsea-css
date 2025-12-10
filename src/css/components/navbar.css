@@ -1,12 +1,13 @@
 .navbar {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     column-gap: var(--navbar-padding);
     position: relative;
     z-index: 99991;
     min-width: 0;
     padding: var(--navbar-spacing) var(--navbar-padding);
-    font-size: 14px;
+    font-size: var(--font-size-md);
 }
 
 .navbar.fixed {
@@ -64,7 +65,8 @@
 .navbar>.fluid {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--navbar-padding);
+    align-items: center;
+    column-gap: var(--navbar-padding);
     width: 100%;
     min-width: 0;
 }
@@ -92,10 +94,6 @@
     border-left: var(--container-padding) solid transparent;
 }
 
-.navbar-logo {
-    margin: auto 0;
-}
-
 .navbar-logo a {
     display: flex;
     font-weight: var(--font-semibold);
@@ -118,9 +116,8 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: var(--navbar-gap);
+    column-gap: var(--navbar-gap);
     position: relative;
-    margin: auto 0;
 }
 
 .navbar nav.right {
@@ -133,26 +130,17 @@
     transform: translateX(-50%);
 }
 
-.navbar nav>* {
-    position: relative;
-    z-index: 1;
-}
-
 .navbar nav ul {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: var(--navbar-gap);
-}
-
-.navbar nav ul li {
-    margin: auto 0;
+    column-gap: var(--navbar-gap);
 }
 
 .navbar nav a:not(.btn) {
     display: flex;
     align-items: center;
-    gap: 12px;
+    column-gap: 12px;
     position: relative;
     height: 48px;
     padding-bottom: 1px;
@@ -164,7 +152,8 @@
 }
 
 .navbar nav .caret {
-    margin-left: -6px;
+    margin-top: -1px;
+    margin-left: -2px;
 }
 
 .navbar nav .divider {

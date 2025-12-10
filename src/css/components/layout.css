@@ -21,25 +21,28 @@
     position: absolute;
 }
 
+.overflow-h {
+    overflow: hidden;
+}
+
 .flow-x {
     overflow-x: auto;
 }
 
 .hv-center {
-    justify-content: center;
-    align-items: center;
+    align-items: center !important;
 }
 
 .hz-center {
-    justify-content: center;
+    justify-content: center !important;
 }
 
 .hz-left {
-    justify-content: start;
+    justify-content: start !important;
 }
 
 .hz-right {
-    justify-content: end;
+    justify-content: end !important;
 }
 
 .hz-fluid>* {
@@ -48,13 +51,29 @@
 }
 
 .vr-center {
-    align-items: center;
+    align-items: center !important;
 }
 
 .vr-start {
-    align-items: start;
+    align-items: start !important;
 }
 
 .vr-end {
-    align-items: end;
+    align-items: end !important;
+}
+
+.shadow-sm {
+    box-shadow: var(--shadow-sm);
+}
+
+.shadow-md {
+    box-shadow: var(--shadow-md);
+}
+
+.shadow-lg {
+    box-shadow: var(--shadow-lg);
+}
+
+.shadow-xl {
+    box-shadow: var(--shadow-xl);
 }

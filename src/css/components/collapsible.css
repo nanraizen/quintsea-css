@@ -1,11 +1,12 @@
 .collapse,
 [data-accordion=content] {
+    will-change: opacity, max-height;
     position: relative;
     opacity: 0;
     overflow: hidden;
     max-height: 0;
-    transition: max-height .2s var(--cubic), opacity .6s ease;
-    font-size: 14px;
+    transition: opacity .6s ease, max-height .2s var(--cubic);
+    font-size: var(--font-size-md);
 }
 
 [data-collapse=content]>*:not(.card),
@@ -24,7 +25,7 @@
     gap: 12px;
     min-height: 24px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: var(--font-size-md);
     line-height: 1.75;
 }
 
@@ -35,6 +36,7 @@
 }
 
 [data-accordion=toggle]::after {
+    will-change: transform, height;
     content: '';
     display: flex;
     position: relative;
@@ -43,9 +45,7 @@
     margin: auto 0;
     margin-left: auto;
     transition: transform .2s var(--cubic), height .2s var(--cubic);
-    background-image: var(--icon-chevron-down2);
-    background-repeat: no-repeat;
-    background-position: center;
+    background: var(--icon-caret) no-repeat center / contain;
 }
 
 [data-accordion=toggle].expand::after {
@@ -58,7 +58,7 @@
 }
 
 [data-accordion=toggle].expand .hidden {
-    display: unset;
+    display: unset !important;
 }
 
 .accordion hr {
@@ -68,6 +68,7 @@
 .accordion.plus-caret [data-accordion=toggle]::after {
     transform: unset;
     background-image: var(--icon-plus);
+    background-size: 20px;
 }
 
 .accordion.plus-caret [data-accordion=toggle].expand::after {

@@ -180,7 +180,7 @@ select,
 textarea {
     outline: none;
     margin: 0;
-    font-size: 14px;
+    font-size: var(--font-size-md);
     font-family: var(--font-1);
 }
 
@@ -298,6 +298,7 @@ th {
 }
 
 img {
+    image-rendering: optimizeQuality;
     max-width: 100%;
     border-style: none;
     vertical-align: middle;
@@ -307,7 +308,7 @@ figcaption {
     margin-top: 12px;
     padding-left: 12px;
     border-left: 2px solid var(--mono-30);
-    font-size: 14px;
+    font-size: var(--font-size-md);
     color: var(--mono-50);
     text-align: left;
 }
@@ -316,6 +317,7 @@ blockquote {
     position: relative;
     margin: 24px 0;
     padding: 20px 24px;
+    padding-left: calc(24px * 3);
     border: var(--stroke) solid var(--mono-30);
     border-radius: var(--radius-md);
 }
@@ -334,22 +336,33 @@ blockquote::after {
 }
 
 blockquote::before {
+    mask: var(--icon-quotes) no-repeat center / contain;
     content: '';
-    display: flex;
-    justify-content: center;
+    display: block;
     position: absolute;
-    top: -12px;
-    width: 28px;
+    top: 22px;
+    left: 24px;
+    width: 24px;
     height: 24px;
-    background-color: var(--bg);
-    background-image: var(--icon-quotes);
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: var(--radius-sm);
+    background-color: var(--primary);
 }
 
 blockquote cite {
+    display: block;
+    position: relative;
+    margin-top: 8px;
+    padding-left: 28px;
+    font-size: var(--font-size-md);
     color: var(--mono-50);
+}
+
+blockquote cite::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 20px;
+    border-top: 1px solid var(--mono-40);
 }
 
 hr {

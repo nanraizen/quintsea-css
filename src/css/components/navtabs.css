@@ -78,7 +78,7 @@
     border-bottom: 1px solid var(--primary);
 }
 
-.navtabs.underline .btn:nth-child(n+2)::after {
+.navtabs.underline:not(.hz-fluid) .btn:nth-child(n+2)::after {
     left: -32px;
 }
 

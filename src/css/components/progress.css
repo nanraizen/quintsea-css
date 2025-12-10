@@ -30,7 +30,7 @@ progress.show-percent::before {
     padding: 0 8px;
     background-color: var(--mono-20);
     border-radius: inherit;
-    font-size: 12px;
+    font-size: var(--font-size-sm);
     font-style: italic;
     font-weight: var(--font-semibold);
     line-height: 1;

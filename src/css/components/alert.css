@@ -28,33 +28,35 @@
 }
 
 .alert::before {
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
     content: '';
-    display: flex;
+    display: block;
     position: relative;
     width: 24px;
     height: 24px;
     margin: auto 0;
-    background-image: var(--icon-warning);
-    background-repeat: no-repeat;
-    background-position: center;
+    background-color: var(--color);
 }
 
-.alert.primary::before {
-    background-image: var(--icon-announcements);
+.alert.warning::before {
+    mask: var(--icon-warning);
 }
 
 .alert.success::before {
-    background-image: var(--icon-success);
+    mask: var(--icon-success);
 }
 
 .alert.info::before {
-    background-image: var(--icon-info);
+    mask: var(--icon-info);
 }
 
 .alert.error::before {
-    background-image: var(--icon-error);
+    mask: var(--icon-error);
 }
 
+.alert.primary::before,
 .alert.icon::before {
     display: none;
 }

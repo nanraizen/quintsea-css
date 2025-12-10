@@ -1,14 +1,11 @@
 :root {
-    --icon-chevron-down2: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="%233A3C42"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>');
-    --icon-chevron-right: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="%233A3C42"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>');
-    --icon-plus: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="%233A3C42"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>');
     --radius-xs: 0;
     --radius-sm: 0;
     --radius-md: 0;
     --radius-lg: 0;
     --radius-xl: 0;
     --stroke: 2px;
-    --stroke-min: -2px;
+    --stroke-focus: 0;
     --red: #FF6B5E;
     --red-dark: #E65F52;
     --red-darker: #CC5246;
@@ -72,6 +69,8 @@
     --brown-20: #C18A5A26;
     --brown-30: #C18A5A40;
     --brown-40: #C18A5A59;
+    --stroke-color: var(--text);
+    --stroke-color-hover: var(--text);
 }
 
 blockquote,
@@ -104,22 +103,22 @@ textarea,
 }
 
 .btn.btn-xs,
-.option input+.mark::before,
+.option input+span::before,
+.option input+span::after,
 .progress,
 progress,
 [data-modal=content] .modal-card>header [data-modal=close] {
     box-shadow: 2px 2px 0 0 var(--text);
 }
 
-.option input:checked+.mark::before,
-.option input[role=switch]+.mark::after,
-.navtabs.underline .btn::before {
+.navtabs.underline .btn::before,
+.option input {
     background-color: var(--text) !important;
 }
 
-.option input[role=switch]:checked+.mark::after,
-.option input[type=radio]+.mark::after {
-    background-color: var(--bg) !important;
+.option input:checked+span::before,
+.option input:checked+span::after {
+    background-color: transparent;
 }
 
 blockquote,
@@ -136,8 +135,11 @@ input:disabled,
 select:disabled,
 textarea:disabled,
 textarea:read-only,
+input[type=file]:focus::file-selector-button,
+input[type=file]:focus::-webkit-file-upload-button,
 .placeholder,
-.option input+.mark::before,
+.option input+span::before,
+.option input+span::after,
 [data-modal=content] .modal-card>header,
 [data-modal=content] .modal-card>footer,
 table th,
@@ -156,6 +158,19 @@ table td,
     border-color: transparent;
 }
 
+input:disabled,
+input:read-only,
+select:disabled,
+textarea:disabled,
+textarea:read-only {
+    background-color: var(--mono-20);
+}
+
+.option input:disabled+span::before,
+.option input:disabled+span::after {
+    background-color: var(--mono-30);
+}
+
 .btn,
 .btn.btn-o.default,
 .progress,
@@ -172,7 +187,8 @@ figcaption,
 .navtabs>.btn.active,
 .navtabs.underline>.btn,
 .navtabs.underline>.btn:hover,
-.navtabs.underline>.btn.active {
+.navtabs.underline>.btn.active,
+.input-icon:focus-within .glyph {
     color: var(--text) !important;
 }
 
@@ -180,6 +196,7 @@ figcaption,
 .cardset.divider,
 .cardset[class*=gap-],
 .cardset:not([class*=gap-]) .card,
+.cardset[class*=gap-].hover .card:hover,
 input:focus,
 select:focus,
 textarea:focus,
@@ -189,7 +206,10 @@ select:disabled,
 textarea:disabled,
 textarea:read-only,
 .placeholder,
-.option input:checked+.mark::before,
+.option input:checked+span::before,
+.option input:checked+span::after,
+.option input:disabled+span::before,
+.option input:disabled+span::after,
 .group>*,
 .underline input,
 .underline select,
@@ -198,7 +218,7 @@ textarea:read-only,
 .underline .group,
 [data-dropdown=content] nav .btn,
 .navtabs.underline .btn {
-    box-shadow: unset !important;
+    box-shadow: unset;
 }
 
 .btn.btn:active {
@@ -237,10 +257,6 @@ input[type=range]+.range-value {
     color: var(--bg);
 }
 
-.option input[type=checkbox]:not([role=switch])+.mark::after {
-    filter: var(--brightness);
-}
-
 .show-percent>*::before,
 progress.show-percent::before {
     top: 0;
@@ -248,12 +264,8 @@ progress.show-percent::before {
     background-color: transparent;
 }
 
-.group:not(.btn-o)>*:nth-child(n+2) {
-    margin-left: var(--stroke-min) !important;
-}
-
 .accordion>.btn[data-accordion=toggle]:not(.btn-t):nth-child(n+2) {
-    margin-top: var(--stroke-min);
+    margin-top: calc(var(--stroke) * -1);
 }
 
 .accordion>.btn[data-accordion=toggle]:not(.btn-t).expand+[data-accordion=content]+[data-accordion=toggle]:nth-child(n+2) {
@@ -267,8 +279,4 @@ progress.show-percent::before {
 
 [data-dropdown=content] {
     margin: 8px 0;
-}
-
-.dropdown [data-dropdown=toggle].btn:not(.btn-o):not(.btn-l) .caret {
-    filter: var(--brightness-reverse);
 }

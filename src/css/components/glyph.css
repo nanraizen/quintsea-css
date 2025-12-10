@@ -1,25 +1,20 @@
-.caret {
-    filter: var(--brightness-reverse);
-    display: flex;
-    position: relative;
-    width: 20px;
-    height: 16px;
-    background-image: var(--icon-chevron-down);
-    background-repeat: no-repeat;
-    background-position: center;
+.caret::before {
+    mask: var(--icon-caret) no-repeat center / 24px;
+    content: '';
+    display: block;
+    width: 14px;
+    height: 14px;
+    background-color: currentColor;
 }
 
-.caret.secondary {
-    background-image: var(--icon-chevron-down2);
-}
-
-.close {
-    display: flex;
-    width: 20px;
-    height: 20px;
-    background-image: var(--icon-times);
-    background-repeat: no-repeat;
-    background-position: center;
+.close::before {
+    mask: var(--icon-plus) no-repeat center / 24px;
+    content: '';
+    display: block;
+    transform: rotate(45deg);
+    width: 24px;
+    height: 24px;
+    background-color: currentColor;
 }
 
 .fab {
