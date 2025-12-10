@@ -5,14 +5,12 @@
     min-height: 240px;
 }
 
-.wrapper-left,
-.wrapper-right {
+[class*=wrapper-] {
     width: 100%;
     max-width: unset;
 }
 
-.wrapper-left.wide,
-.wrapper-right.wide {
+[class*=wrapper-].wide {
     grid-column: span 2;
 }
 

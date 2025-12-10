@@ -1,5 +1,5 @@
 /*!
- * Quintsea CSS v0.4.6 (https://quintsea.nanraizen.me)
+ * Quintsea CSS v0.4.7 (https://quintsea.nanraizen.me)
  * (c) 2025 | MIT License
  */
 /* ROOT & RESET */
@@ -1238,13 +1238,12 @@ label {
 }
 .btn.btn-a {
     height: unset !important;
-    padding: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-left: 0;
     background-color: transparent;
+    border-radius: 0;
     color: var(--color) !important;
-}
-.btn.btn-a:hover>*:not(.glyph) {
-    text-underline-offset: 6px;
-    text-decoration: underline !important;
 }
 .btn.btn-b {
     display: flex;
@@ -2130,13 +2129,11 @@ table tfoot {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     min-height: 240px;
 }
-.wrapper-left,
-.wrapper-right {
+[class*=wrapper-] {
     width: 100%;
     max-width: unset;
 }
-.wrapper-left.wide,
-.wrapper-right.wide {
+[class*=wrapper-].wide {
     grid-column: span 2;
 }
 .wrapper [class*=wrapper-]:only-child {

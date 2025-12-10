@@ -121,14 +121,12 @@
 
 .btn.btn-a {
     height: unset !important;
-    padding: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-left: 0;
     background-color: transparent;
+    border-radius: 0;
     color: var(--color) !important;
-}
-
-.btn.btn-a:hover>*:not(.glyph) {
-    text-underline-offset: 6px;
-    text-decoration: underline !important;
 }
 
 .btn.btn-b {
