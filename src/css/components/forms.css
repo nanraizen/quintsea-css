@@ -83,7 +83,7 @@ input[type=file] {
 
 input[type=file]::file-selector-button,
 input[type=file]::-webkit-file-upload-button {
-    mask: var(--icon-attach) no-repeat center / contain;
+    mask: var(--icon-attach) no-repeat -1px / contain;
     position: absolute;
     top: 50%;
     left: 19px;
