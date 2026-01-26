@@ -35,7 +35,7 @@ module.exports = (e) => {
 				header: [
 					'/*!',
 					' * Quintsea CSS v' + pkg.version + ' (' + pkg.homepage + ')',
-					' * (c) ' + year + ' | ' + pkg.license + ' License',
+					' * (c) 2025-' + year + ' | ' + pkg.license + ' License',
 					' */\n',
 				].join('\n'),
 			})

@@ -13,7 +13,7 @@ const outDir = path.join(__dirname, 'js');
 const jsHeader = [
 	'/*!',
 	' * Quintsea CSS v' + pkg.version + ' (' + pkg.homepage + ')',
-	' * (c) ' + year + ' | ' + pkg.license + ' License',
+	' * (c) 2025-' + year + ' | ' + pkg.license + ' License',
 	' */'
 ];
 
