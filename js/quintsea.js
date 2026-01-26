@@ -1,23 +1,26 @@
 /*!
- * Quintsea CSS v0.4.7 (https://quintsea.nanraizen.me)
- * (c) 2025 | MIT License
+ * Quintsea CSS v0.5.0 (https://quintsea.nanraizen.me)
+ * (c) 2025-2026 | MIT License
  */
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll('a[href="#"]').forEach(e => {
     e.addEventListener("click", e => e.preventDefault());
   });
   const e = new URL(window.location.href);
-  function t(e, t = null) {
+  function t(e, t = null, o = null) {
     navigator.clipboard.writeText(e).then(() => {
-      const e = document.createElement("div");
-      e.className = "copy-notif";
-      const o = document.createElement("span");
-      o.className = "glyph color green", o.textContent = "done_all";
-      const a = document.createElement("span");
-      a.textContent = "Copied to Clipboard", e.appendChild(o), e.appendChild(a), document.body.appendChild(e), 
-      setTimeout(() => e.classList.add("show"), 100), setTimeout(() => {
-        e.classList.remove("show"), setTimeout(() => e.remove(), 500);
-      }, 1500), !t || "INPUT" !== t.tagName && "TEXTAREA" !== t.tagName || (t.focus(), 
+      const a = document.createElement("div");
+      a.className = "copy-notif";
+      const n = document.createElement("span");
+      if (o && o.classList.contains("text-copied")) {
+        n.textContent = "Copied: ";
+        const t = document.createElement("u");
+        t.textContent = e, n.appendChild(t);
+      } else n.textContent = "Copied to Clipboard";
+      a.appendChild(n), document.body.appendChild(a), setTimeout(() => a.classList.add("show"), 100), 
+      setTimeout(() => {
+        a.classList.remove("show"), setTimeout(() => a.remove(), 500);
+      }, 2e3), !t || "INPUT" !== t.tagName && "TEXTAREA" !== t.tagName || (t.focus(), 
       t.select());
     });
   }
@@ -147,13 +150,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }), document.querySelectorAll(".copyBtn").forEach(e => {
     const t = e.getAttribute("data-copy-text") || "";
+    let o;
     e.addEventListener("click", () => {
       navigator.clipboard.writeText(t).then(() => {
-        let o = e.querySelector(".tooltip-text");
-        o || (o = document.createElement("div"), o.className = "tooltip-text", e.appendChild(o)), 
-        o.textContent = "Copied" + (e.classList.contains("text-copied") ? " : " + t : ""), 
-        o.classList.add("show"), setTimeout(() => {
-          o.classList.remove("show"), setTimeout(() => o.remove(), 300);
+        let a = e.querySelector(".tooltip-text");
+        a || (a = document.createElement("div"), a.className = "tooltip-text", e.appendChild(a)), 
+        clearTimeout(o), a.classList.remove("show"), a.offsetHeight, a.textContent = "Copied" + (e.classList.contains("text-copied") ? ": " + t : ""), 
+        a.classList.add("show"), o = setTimeout(() => {
+          a.classList.remove("show"), setTimeout(() => a.remove(), 300);
         }, 1500);
       });
     });
@@ -161,11 +165,11 @@ document.addEventListener("DOMContentLoaded", () => {
     e.addEventListener("click", () => {
       const o = e.closest(".copyGroup").querySelector('[data-copy="content"]');
       if (!o) return;
-      t("INPUT" === o.tagName || "TEXTAREA" === o.tagName ? o.value : o.textContent, o);
+      t("INPUT" === o.tagName || "TEXTAREA" === o.tagName ? o.value : o.textContent, o, e);
     });
   }), document.querySelectorAll(".copyToast").forEach(e => {
     const o = e.getAttribute("data-copy-text") || "";
-    e.addEventListener("click", () => t(o));
+    e.addEventListener("click", () => t(o, null, e));
   });
   const o = document.documentElement, a = document.querySelectorAll("[data-theme-trigger]"), n = window.matchMedia("(prefers-color-scheme: dark)");
   function c(e) {

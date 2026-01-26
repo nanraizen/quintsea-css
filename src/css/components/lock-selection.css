@@ -1,11 +1,12 @@
 .lock-selection,
 .btn,
-.iqon,
 .tooltip-text,
 .progress,
 .form-control:placeholder-shown,
 .glyph,
 .navbar,
+.img-th,
+.img-cover,
 label {
     -webkit-touch-callout: none;
     -webkit-user-select: none;

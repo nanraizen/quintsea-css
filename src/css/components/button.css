@@ -1,21 +1,18 @@
 .btn {
-    --btn-padding: 20px;
-    --btn-height: 48px;
     display: inline-flex;
     align-items: center;
     gap: 14px;
     position: relative;
     min-width: 0;
     height: var(--btn-height);
-    padding-right: var(--btn-padding);
-    padding-bottom: 1px;
-    padding-left: var(--btn-padding);
+    padding-right: var(--btn-padding-x);
+    padding-left: var(--btn-padding-x);
     transition: var(--ease);
     background-color: var(--color);
     border: 0;
     border-radius: var(--radius-md);
     font-size: var(--font-size-md);
-    line-height: 1;
+    line-height: var(--btn-height);
     color: var(--text-reverse) !important;
     text-decoration: none !important;
 }
@@ -36,7 +33,6 @@
     right: 0;
     opacity: 0;
     transition: box-shadow var(--ease), opacity var(--ease);
-    background-color: var(--black);
     border: var(--stroke) solid transparent;
     border-radius: inherit;
 }
@@ -47,8 +43,8 @@
 }
 
 .btn:not(.btn.wide):not(.btn-sq)>.glyph {
-    margin-right: -2px;
-    margin-left: -2px;
+    margin-right: -1px;
+    margin-left: -1px;
 }
 
 .btn img,
@@ -57,55 +53,77 @@
     height: 24px;
 }
 
-.btn span small+b,
-.btn span small+strong {
+.btn span b,
+.btn span strong,
+.btn span small {
     display: block;
     position: relative;
+    line-height: 1;
+}
+
+.btn span small:first-child {
+    top: 1px;
+}
+
+.btn span small+b,
+.btn span small+strong {
     margin-top: 8px;
-    margin-bottom: unset;
 }
 
 .btn span b+small,
 .btn span strong+small {
-    display: block;
-    position: relative;
-    top: 1px;
     margin-top: 8px;
-    margin-bottom: unset;
 }
 
 .btn.btn-xs {
-    --btn-padding: 8px;
     --btn-height: 24px;
-    gap: 12px;
+    --btn-padding-x: 10px;
+    gap: 6px;
     height: var(--btn-height);
     border-radius: var(--radius-xs);
     font-size: var(--font-size-sm);
 }
 
+.btn.btn-xs.ext {
+    --btn-height: 28px;
+    --btn-padding-x: 12px;
+    gap: 8px;
+}
+
 .btn.btn-sm {
-    --btn-padding: 12px;
     --btn-height: 32px;
+    --btn-padding-x: 12px;
     gap: 12px;
     height: var(--btn-height);
     border-radius: var(--radius-sm);
+    font-size: calc(var(--font-size-sm) + 1px);
+}
+
+.btn.btn-sm.ext {
+    --btn-height: 36px;
+    --btn-padding-x: 14px;
 }
 
 .btn.btn-md {
-    --btn-padding: 16px;
     --btn-height: 40px;
+    --btn-padding-x: 16px;
     height: var(--btn-height);
 }
 
+.btn.btn-md.ext {
+    --btn-height: 44px;
+    --btn-padding-x: 18px;
+}
+
 .btn.btn-lg {
-    --btn-padding: 24px;
+    --btn-padding-x: 24px;
     --btn-height: 56px;
     height: var(--btn-height);
     font-size: 16px;
 }
 
 .btn.btn-xl {
-    --btn-padding: 28px;
+    --btn-padding-x: 28px;
     --btn-height: 64px;
     height: var(--btn-height);
     font-size: 18px;
@@ -121,12 +139,28 @@
 
 .btn.btn-a {
     height: unset !important;
-    padding-top: 0;
-    padding-right: 0;
-    padding-left: 0;
+    padding: 0;
     background-color: transparent;
     border-radius: 0;
+    line-height: unset;
     color: var(--color) !important;
+}
+
+.btn.btn-a.text-underline::after {
+    pointer-events: none;
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: .15s ease;
+    border-bottom: 1px solid var(--primary);
+}
+
+.btn.btn-a.text-underline:hover::after {
+    opacity: 1;
 }
 
 .btn.btn-b {
@@ -134,13 +168,14 @@
 }
 
 .btn.btn-c {
-    --btn-padding: 0;
+    --btn-padding-x: 0;
 }
 
 .btn.btn-h {
     height: unset !important;
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-top: var(--btn-padding-y);
+    padding-bottom: var(--btn-padding-y);
+    line-height: 1.4;
 }
 
 .btn.btn-i,
@@ -212,22 +247,16 @@
 }
 
 .btn.btn-l {
-    background-color: var(--color-40);
+    background-color: var(--color-30);
     color: var(--color-darker) !important;
 }
 
-.btn.btn-l::before {
-    background-color: transparent;
+.btn.btn-l:not(.btn-o)::before {
     border-color: var(--color);
 }
 
-.btn.btn-l.default,
-.btn.btn-l.black {
-    background-color: var(--default-40);
-}
-
-.btn.btn-l.default::before,
-.btn.btn-l.black::before {
+.btn.btn-l:not(.btn-o).default::before,
+.btn.btn-l:not(.btn-o).black::before {
     border-color: var(--text);
 }
 
@@ -238,6 +267,8 @@
 }
 
 .btn.btn-o {
+    padding-right: calc(var(--btn-padding-x) - var(--stroke));
+    padding-left: calc(var(--btn-padding-x) - var(--stroke));
     background-color: transparent;
     border: var(--stroke) solid transparent;
     border-color: var(--color);
@@ -245,7 +276,7 @@
 }
 
 .btn.btn-o:hover {
-    background-color: var(--color-20);
+    background-color: var(--color-10);
 }
 
 .btn.btn-o::before {
@@ -256,50 +287,34 @@
     right: calc(var(--stroke) * -1);
     opacity: 1;
     background-color: transparent;
-    border-width: 0;
 }
 
 .btn.btn-o:hover::before {
-    box-shadow: 0 0 0 2px inset var(--color);
+    box-shadow: 0 0 0 1px inset var(--color);
 }
 
-.btn.btn-o.default {
-    border-color: var(--mono-40);
+.btn.btn-o.default,
+.btn.btn-o.btn-l.default:hover {
+    border-color: var(--mono-40) !important;
 }
 
 .btn.btn-o.default:hover::before {
-    box-shadow: 0 0 0 2px inset var(--primary);
+    box-shadow: 0 0 0 1px inset var(--mono-40);
+}
+
+.btn.btn-o.btn-l {
+    background-color: var(--color-10);
+    border-color: var(--color-40);
+}
+
+.btn.btn-o.btn-l:hover {
+    border-color: var(--color);
 }
 
 .btn.btn-p {
-    padding-right: calc(var(--btn-padding) + 4px);
-    padding-left: calc(var(--btn-padding) + 4px);
+    padding-right: calc(var(--btn-padding-x) + 4px);
+    padding-left: calc(var(--btn-padding-x) + 4px);
     border-radius: 99px !important;
-}
-
-.btn.btn-p.btn-xs:not(.btn-i) {
-    padding-right: calc(var(--btn-padding) + 4px);
-    padding-left: calc(var(--btn-padding) + 4px);
-}
-
-.btn.btn-p.btn-sm:not(.btn-i) {
-    padding-right: calc(var(--btn-padding) + 4px);
-    padding-left: calc(var(--btn-padding) + 4px);
-}
-
-.btn.btn-p.btn-md:not(.btn-i) {
-    padding-right: calc(var(--btn-padding) + 4px);
-    padding-left: calc(var(--btn-padding) + 4px);
-}
-
-.btn.btn-p.btn-lg:not(.btn-i) {
-    padding-right: calc(var(--btn-padding) + 4px);
-    padding-left: calc(var(--btn-padding) + 4px);
-}
-
-.btn.btn-p.btn-xl:not(.btn-i) {
-    padding-right: calc(var(--btn-padding) + 4px);
-    padding-left: calc(var(--btn-padding) + 4px);
 }
 
 .btn.btn-t {

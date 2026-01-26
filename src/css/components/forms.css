@@ -231,6 +231,10 @@ fieldset [aria-label=Textarea] textarea {
     width: 100%;
 }
 
+fieldset.flex {
+    flex-direction: unset;
+}
+
 label {
     transition: var(--ease);
     font-size: var(--font-size-md);

@@ -10,11 +10,13 @@
 }
 
 .formatting a:hover {
-    text-underline-offset: 6px;
+    text-underline-offset: 5px;
     text-decoration: underline;
 }
 
-.formatting p:empty::before {
+.formatting p:empty::before,
+.formatting>hr:first-child,
+.formatting>hr:last-child {
     display: none;
 }
 
@@ -46,27 +48,22 @@
     border-radius: 99px;
 }
 
-.formatting ul.icon li {
-    padding-left: 36px;
-}
-
-.formatting ul.icon li::before {
+.formatting ul.icons li::before {
     display: none;
 }
 
-.formatting ul.icon li>span:first-child {
+.formatting ul.icons li>span:first-child {
     position: absolute;
-    left: 0;
+    left: -12px;
     width: 24px;
     text-align: center;
 }
 
-.formatting ul.icon li .glyph {
-    font-variation-settings: 'FILL'1;
+.formatting ul.icons li .glyph {
     top: 2px;
 }
 
-.formatting ul.icon li .fab {
+.formatting ul.icons li .fab {
     top: 4px;
     font-size: 20px;
 }
@@ -118,12 +115,13 @@
 }
 
 .formatting>* {
-    margin: 28px 0;
+    margin: 24px 0;
 }
 
 .formatting>p,
 .formatting>ol,
-.formatting>ul {
+.formatting>ul,
+.formatting>table:not(.table-frame):not(.table-odd):not(.table-hz) {
     margin: 16px 0;
 }
 
@@ -139,16 +137,25 @@
     margin-bottom: 16px;
 }
 
-.formatting>*:first-child {
-    margin-top: 0;
+.formatting>*:first-child,
+.formatting h2+h2,
+.formatting h3+h3,
+.formatting h4+h4,
+.formatting h5+h5,
+.formatting h6+h6,
+.formatting h2+h3,
+.formatting h3+h4,
+.formatting h4+h5,
+.formatting h5+h6 {
+    margin-top: 0 !important;
 }
 
 .formatting>*:last-child {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
 }
 
 .formatting li:nth-of-type(n+2) {
-    margin-top: 4px;
+    margin-top: 6px;
 }
 
 .formatting p img {

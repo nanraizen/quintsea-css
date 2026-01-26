@@ -149,6 +149,10 @@ strong {
     font-weight: var(--font-semibold);
 }
 
+u {
+    text-underline-offset: 5px;
+}
+
 small {
     font-size: .75rem;
 }
@@ -386,4 +390,8 @@ hr.hr-v {
     margin: auto 0;
     border-top: 0;
     border-left: var(--stroke) solid var(--mono-30);
+}
+
+hr.color {
+    border-color: var(--color);
 }

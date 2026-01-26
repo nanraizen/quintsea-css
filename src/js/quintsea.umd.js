@@ -323,6 +323,7 @@
 		// COPY BTN WITH TOOLTIP
 		document.querySelectorAll('.copyBtn').forEach(copyBtn => {
 			const copyContent = copyBtn.getAttribute('data-copy-text') || '';
+			let hideTimer;
 
 			copyBtn.addEventListener('click', () => {
 				navigator.clipboard.writeText(copyContent).then(() => {
@@ -334,10 +335,15 @@
 						copyBtn.appendChild(tooltip);
 					}
 
-					tooltip.textContent = 'Copied' + (copyBtn.classList.contains('text-copied') ? ' : ' + copyContent : '');
+					clearTimeout(hideTimer);
+
+					tooltip.classList.remove('show');
+					void tooltip.offsetHeight;
+
+					tooltip.textContent = 'Copied' + (copyBtn.classList.contains('text-copied') ? ': ' + copyContent : '');
 					tooltip.classList.add('show');
 
-					setTimeout(() => {
+					hideTimer = setTimeout(() => {
 						tooltip.classList.remove('show');
 						setTimeout(() => tooltip.remove(), 300);
 					}, 1500);
@@ -346,27 +352,31 @@
 		});
 
 		// COPY TOAST
-		function showCopyToast(text, target = null) {
+		function showCopyToast(text, target = null, trigger = null) {
 			navigator.clipboard.writeText(text).then(() => {
 				const notif = document.createElement('div');
 				notif.className = 'copy-notif';
 
-				const icon = document.createElement('span');
-				icon.className = 'glyph color green';
-				icon.textContent = 'done_all';
-
 				const msg = document.createElement('span');
-				msg.textContent = 'Copied to Clipboard';
+				const useTextCopied = trigger && trigger.classList.contains('text-copied');
 
-				notif.append(icon, msg);
+				if (useTextCopied) {
+					msg.textContent = 'Copied: ';
+					const uText = document.createElement('u');
+					uText.textContent = text;
+					msg.appendChild(uText);
+				} else {
+					msg.textContent = 'Copied to Clipboard';
+				}
+
+				notif.appendChild(msg);
 				document.body.appendChild(notif);
 
 				setTimeout(() => notif.classList.add('show'), 100);
-
 				setTimeout(() => {
 					notif.classList.remove('show');
 					setTimeout(() => notif.remove(), 500);
-				}, 1500);
+				}, 2000);
 
 				if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA')) {
 					target.focus();
@@ -376,22 +386,21 @@
 		}
 
 		// COPY GROUP
-		document.querySelectorAll('.copyGroup [data-copy="trigger"]').forEach(trigger => {
-			trigger.addEventListener('click', () => {
-				const group = trigger.closest('.copyGroup');
-				const content = group.querySelector('[data-copy="content"]');
-
-				if (!content) return;
-				const text = content.tagName === 'INPUT' || content.tagName === 'TEXTAREA' ? content.value : content.textContent;
-
-				showCopyToast(text, content);
+		document.querySelectorAll('.copyGroup [data-copy="trigger"]').forEach(copyGroup => {
+			copyGroup.addEventListener('click', () => {
+				const copyContent = copyGroup.closest('.copyGroup').querySelector('[data-copy="content"]');
+				if (!copyContent) return;
+				const copyText = copyContent.tagName === 'INPUT' || copyContent.tagName === 'TEXTAREA' ? copyContent.value : copyContent.textContent;
+				showCopyToast(copyText, copyContent, copyGroup);
 			});
 		});
 
 		// COPY BTN TOAST
-		document.querySelectorAll('.copyToast').forEach(btn => {
-			const text = btn.getAttribute('data-copy-text') || '';
-			btn.addEventListener('click', () => showCopyToast(text));
+		document.querySelectorAll('.copyToast').forEach(copyToast => {
+			const copyContent = copyToast.getAttribute('data-copy-text') || '';
+			copyToast.addEventListener('click', () =>
+				showCopyToast(copyContent, null, copyToast)
+			);
 		});
 
 		// DARK MODE (minimalism only)

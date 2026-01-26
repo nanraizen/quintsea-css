@@ -121,6 +121,11 @@ progress,
     background-color: transparent;
 }
 
+.option input+span::before,
+.option input+span::after {
+    border-radius: 0;
+}
+
 blockquote,
 figcaption,
 hr,

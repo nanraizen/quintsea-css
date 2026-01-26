@@ -5,10 +5,10 @@
 
 .default {
     --color: var(--default);
-    --color-10: var(--default-10);
-    --color-20: var(--default-20);
-    --color-30: var(--default-30);
-    --color-40: var(--default-40);
+    --color-10: var(--default-20);
+    --color-20: var(--default-30);
+    --color-30: var(--default-40);
+    --color-40: var(--default-50);
     --color-dark: var(--default-dark);
     --color-darker: var(--default-darker);
 }

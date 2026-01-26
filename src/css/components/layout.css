@@ -29,36 +29,32 @@
     overflow-x: auto;
 }
 
-.hv-center {
-    align-items: center !important;
-}
-
-.hz-center {
+.x-center {
     justify-content: center !important;
 }
 
-.hz-left {
+.x-left {
     justify-content: start !important;
 }
 
-.hz-right {
+.x-right {
     justify-content: end !important;
 }
 
-.hz-fluid>* {
+.x-fluid>* {
     flex: 1;
     max-width: unset;
 }
 
-.vr-center {
+.y-center {
     align-items: center !important;
 }
 
-.vr-start {
+.y-start {
     align-items: start !important;
 }
 
-.vr-end {
+.y-end {
     align-items: end !important;
 }
 
@@ -76,4 +72,12 @@
 
 .shadow-xl {
     box-shadow: var(--shadow-xl);
+}
+
+.block {
+    display: block;
+}
+
+.inline {
+    display: inline;
 }

@@ -32,35 +32,31 @@
 }
 
 .text-20 {
-    font-size: 1.25rem;
+    font-size: 20px;
 }
 
 .text-24 {
-    font-size: 1.5rem;
+    font-size: 24px;
 }
 
 .text-28 {
-    font-size: 1.75rem;
+    font-size: 28px;
 }
 
 .text-36 {
-    font-size: 2.25rem;
+    font-size: 36px;
 }
 
 .text-40 {
-    font-size: 2.5rem;
+    font-size: 40px;
 }
 
 .text-44 {
-    font-size: 2.75rem;
-}
-
-.text-44 {
-    font-size: 2.75rem;
+    font-size: 44px;
 }
 
 .text-48 {
-    font-size: 3rem;
+    font-size: 48px;
 }
 
 .text-left {
@@ -92,7 +88,7 @@
 }
 
 .text-underline:hover {
-    text-underline-offset: 6px;
+    text-underline-offset: 5px;
     text-decoration: underline;
 }
 

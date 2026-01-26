@@ -1,5 +1,6 @@
 .option {
 	--mark-size: 26px;
+	--mark-radius: 8px;
 	position: relative;
 	width: fit-content;
 	padding: 0;
@@ -48,7 +49,7 @@
 	transition: box-shadow .2s var(--cubic), opacity .2s var(--cubic), background-color .2s var(--cubic), border-color .2s var(--cubic);
 	background-color: transparent;
 	border: var(--stroke) solid var(--stroke-color);
-	border-radius: calc(var(--radius-sm) + 1px);
+	border-radius: calc(var(--mark-radius) + 1px);
 }
 
 .option input:checked+span::before,

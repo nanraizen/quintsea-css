@@ -42,6 +42,7 @@
     background-color: transparent;
     border: 0;
     border-radius: 0;
+    line-height: 1;
 }
 
 .navtabs.underline .btn:hover {
@@ -78,7 +79,7 @@
     border-bottom: 1px solid var(--primary);
 }
 
-.navtabs.underline:not(.hz-fluid) .btn:nth-child(n+2)::after {
+.navtabs.underline:not(.x-fluid) .btn:nth-child(n+2)::after {
     left: -32px;
 }
 
@@ -87,18 +88,18 @@
     color: var(--primary-dark) !important;
 }
 
-.navtabs.underline.hz-fluid {
+.navtabs.underline.x-fluid {
     gap: 0;
 }
 
-.navtabs.underline.hz-fluid .btn {
+.navtabs.underline.x-fluid .btn {
     justify-content: center;
 }
 
-.navtabs.underline.hz-fluid .btn::after {
+.navtabs.underline.x-fluid .btn::after {
     opacity: 0;
 }
 
-.navtabs.underline.hz-fluid .btn:hover::after {
+.navtabs.underline.x-fluid .btn:hover::after {
     opacity: 1;
 }
