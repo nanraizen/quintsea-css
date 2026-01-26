@@ -12,7 +12,7 @@
     border: 0;
     border-radius: var(--radius-md);
     font-size: var(--font-size-md);
-    line-height: var(--btn-height);
+    line-height: 1.4;
     color: var(--text-reverse) !important;
     text-decoration: none !important;
 }
@@ -173,9 +173,9 @@
 
 .btn.btn-h {
     height: unset !important;
+    min-height: 48px;
     padding-top: var(--btn-padding-y);
     padding-bottom: var(--btn-padding-y);
-    line-height: 1.4;
 }
 
 .btn.btn-i,

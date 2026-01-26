@@ -1,5 +1,5 @@
 /*!
- * Quintsea CSS v0.5.0 (https://quintsea.nanraizen.me)
+ * Quintsea CSS v0.5.1 (https://quintsea.nanraizen.me)
  * (c) 2025-2026 | MIT License
  */
 /* ROOT & RESET */
@@ -1184,7 +1184,7 @@ label {
     border: 0;
     border-radius: var(--radius-md);
     font-size: var(--font-size-md);
-    line-height: var(--btn-height);
+    line-height: 1.4;
     color: var(--text-reverse) !important;
     text-decoration: none !important;
 }
@@ -1321,9 +1321,9 @@ label {
 }
 .btn.btn-h {
     height: unset !important;
+    min-height: 48px;
     padding-top: var(--btn-padding-y);
     padding-bottom: var(--btn-padding-y);
-    line-height: 1.4;
 }
 .btn.btn-i,
 .btn.btn-i.btn-o {
@@ -1515,14 +1515,14 @@ label {
     display: flex;
     gap: 16px;
 }
-.cardset.icon .card > * {
+.cardset.icon .card>* {
     margin: auto 0;
 }
-.cardset.icon .card > span {
+.cardset.icon .card>span {
     width: 24px;
     text-align: center;
 }
-.cardset.icon .card > div {
+.cardset.icon .card>div {
     flex: 1;
 }
 .cardset.hover .card:hover {
@@ -1546,10 +1546,10 @@ label {
 .cardset.thumbnail .card .img-th {
     border-radius: var(--radius-md);
 }
-.cardset.thumbnail .card .img-th + * {
+.cardset.thumbnail .card .img-th+* {
     margin-top: 24px;
 }
-.cardset.thumbnail .card.flex .img-th + * {
+.cardset.thumbnail .card.flex .img-th+* {
     margin-top: unset;
 }
 .breadcrumbs {
