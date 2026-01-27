@@ -626,6 +626,12 @@ hr.hr-v {
 hr.color {
     border-color: var(--color);
 }
+.cursor-pointer {
+    cursor: pointer;
+}
+.cursor-notallowed {
+    cursor: not-allowed;
+}
 /* BASE */
 .secondary {
     --color: var(--mono-60);
