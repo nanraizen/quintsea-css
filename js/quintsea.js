@@ -1,5 +1,5 @@
 /*!
- * Quintsea CSS v0.5.2 (https://quintsea.nanraizen.me)
+ * Quintsea CSS v0.5.3 (https://quintsea.nanraizen.me)
  * (c) 2025-2026 | MIT License
  */
 document.addEventListener("DOMContentLoaded", () => {
