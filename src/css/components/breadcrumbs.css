@@ -1,6 +1,7 @@
 .breadcrumbs {
     display: flex;
     flex-wrap: wrap;
+    gap: 8px;
     font-size: var(--font-size-md);
     line-height: 1;
     list-style: none;
@@ -9,12 +10,9 @@
 .breadcrumbs>li {
     flex-shrink: 1;
     position: relative;
-    overflow: hidden;
     max-width: 240px;
     margin: auto 0;
     padding: 2px 0;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
 
 .breadcrumbs>li .glyph {
@@ -29,17 +27,24 @@
 }
 
 .breadcrumbs>li:nth-child(n+2) {
-    padding-left: 28px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.breadcrumbs>li+li:before {
+.breadcrumbs>li span,
+.breadcrumbs>li:nth-child(n+2) a {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.breadcrumbs>li:nth-child(n+2):before {
     mask: var(--icon-caret) no-repeat center / contain;
     content: '';
     display: block;
-    position: absolute;
-    top: 50%;
-    left: 6px;
-    transform: translateY(-50%) rotate(-90deg);
+    transform: rotate(-90deg);
     width: 16px;
     height: 16px;
     background-color: var(--mono-50);
