@@ -8,7 +8,7 @@ textarea,
     padding: 1px 20px 0;
     transition: var(--ease);
     background-color: transparent;
-    border: var(--stroke) solid var(--stroke-color);
+    border: var(--input-stroke) solid var(--input-stroke-color);
     border-radius: var(--radius-md);
     line-height: 1;
     color: var(--text);
@@ -41,10 +41,17 @@ textarea:disabled {
     cursor: not-allowed;
 }
 
+input:disabled,
+input:read-only,
+textarea:disabled,
+textarea:read-only {
+    pointer-events: none;
+}
+
 input:focus,
 select:focus,
 textarea:focus {
-    box-shadow: 0 0 0 var(--stroke-focus) inset var(--primary);
+    box-shadow: 0 0 0 var(--input-stroke-focus) inset var(--primary);
     border-color: var(--primary);
 }
 
@@ -170,7 +177,7 @@ input[type=range]+.range-value {
     padding: 1px 8px 0;
     transition: opacity .2s var(--cubic), transform .2s var(--cubic);
     background-color: var(--primary-20);
-    border: var(--stroke) solid var(--primary);
+    border: var(--input-stroke) solid var(--primary);
     border-radius: 99px;
     font-size: var(--font-size-sm);
     color: var(--primary);
@@ -328,7 +335,7 @@ label+.helpblock {
 .underline input:focus,
 .underline select:focus,
 .underline textarea:focus {
-    box-shadow: 0 -2px 0 calc(var(--stroke-focus) * -1) inset var(--primary);
+    box-shadow: 0 -2px 0 calc(var(--input-stroke-focus) * -1) inset var(--primary);
 }
 
 .underline select {

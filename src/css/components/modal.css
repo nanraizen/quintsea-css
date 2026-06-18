@@ -59,7 +59,7 @@
     align-items: center;
     gap: 24px;
     padding: 24px;
-    border-bottom: var(--stroke) solid var(--mono-30);
+    border-bottom: var(--table-stroke) solid var(--mono-30);
 }
 
 [data-modal=content] .modal-card>header p {

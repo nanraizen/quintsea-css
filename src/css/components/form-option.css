@@ -1,133 +1,133 @@
 .option {
-	--mark-size: 26px;
-	--mark-radius: 8px;
-	position: relative;
-	width: fit-content;
-	padding: 0;
-	padding-top: 1px;
-	cursor: pointer;
-	font-weight: 400 !important;
+    --mark-size: 26px;
+    --mark-radius: 8px;
+    position: relative;
+    width: fit-content;
+    padding: 0;
+    padding-top: 1px;
+    cursor: pointer;
+    font-weight: 400 !important;
 }
 
 .option input {
-	box-shadow: unset;
-	appearance: none;
-	mask: var(--icon-check) no-repeat center / contain;
-	will-change: opacity, transform, background-color;
-	position: absolute;
-	top: 0;
-	opacity: 0;
-	transform: translateY(6px);
-	width: var(--mark-size);
-	height: var(--mark-size);
-	transition: opacity .2s var(--cubic), transform .2s var(--cubic), background-color .2s var(--cubic);
-	background-color: var(--primary);
-	cursor: unset;
-	border: 0;
+    box-shadow: unset;
+    appearance: none;
+    mask: var(--icon-check) no-repeat center / contain;
+    will-change: opacity, transform, background-color;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transform: translateY(6px);
+    width: var(--mark-size);
+    height: var(--mark-size);
+    transition: opacity .2s var(--cubic), transform .2s var(--cubic), background-color .2s var(--cubic);
+    background-color: var(--primary);
+    cursor: unset;
+    border: 0;
 }
 
 .option input:checked {
-	opacity: 1;
-	transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .option input+span {
-	display: flex;
-	column-gap: 12px;
+    display: flex;
+    column-gap: 12px;
 }
 
 .option input+span::before,
 .option input+span::after {
-	will-change: box-shadow, opacity, background-color, border-color;
-	content: '';
-	display: block;
-	flex: 0 0 var(--mark-size);
-	position: relative;
-	width: var(--mark-size);
-	height: var(--mark-size);
-	margin-top: -1px;
-	transition: box-shadow .2s var(--cubic), opacity .2s var(--cubic), background-color .2s var(--cubic), border-color .2s var(--cubic);
-	background-color: transparent;
-	border: var(--stroke) solid var(--stroke-color);
-	border-radius: calc(var(--mark-radius) + 1px);
+    will-change: box-shadow, opacity, background-color, border-color;
+    content: '';
+    display: block;
+    flex: 0 0 var(--mark-size);
+    position: relative;
+    width: var(--mark-size);
+    height: var(--mark-size);
+    margin-top: -1px;
+    transition: box-shadow .2s var(--cubic), opacity .2s var(--cubic), background-color .2s var(--cubic), border-color .2s var(--cubic);
+    background-color: transparent;
+    border: var(--input-stroke) solid var(--input-stroke-color);
+    border-radius: calc(var(--mark-radius) + 1px);
 }
 
 .option input:checked+span::before,
 .option input:checked+span::after {
-	box-shadow: 0 0 0 var(--stroke-focus) inset var(--primary);
-	background-color: var(--primary-20);
-	border-color: var(--primary);
+    box-shadow: 0 0 0 var(--input-stroke-focus) inset var(--primary);
+    background-color: var(--primary-20);
+    border-color: var(--primary);
 }
 
 .option input[role=switch] {
-	mask: unset;
-	opacity: 1;
-	transform: translateX(0) scale(1);
-	width: 18px;
-	height: 18px;
-	margin: 4px;
-	background-color: var(--mono-30);
-	border: 0;
-	border-radius: 99px;
+    mask: unset;
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    width: 18px;
+    height: 18px;
+    margin: 4px;
+    background-color: var(--mono-30);
+    border: 0;
+    border-radius: 99px;
 }
 
 .option input[role=switch]:checked {
-	transform: translateX(18px) scale(.8889);
-	background-color: var(--primary);
+    transform: translateX(18px) scale(.8889);
+    background-color: var(--primary);
 }
 
 .option input[role=switch]+span::before,
 .option input[role=switch]+span::after {
-	flex: 0 0 calc(var(--mark-size) + 18px);
-	border-radius: 99px;
+    flex: 0 0 calc(var(--mark-size) + 18px);
+    border-radius: 99px;
 }
 
 .option input[type=radio] {
-	mask: unset;
-	width: 6px;
-	height: 6px;
-	margin: 10px;
-	border-radius: 50%;
+    mask: unset;
+    width: 6px;
+    height: 6px;
+    margin: 10px;
+    border-radius: 50%;
 }
 
 .option input[type=radio]+span::before,
 .option input[type=radio]+span::after {
-	border-radius: 50%;
+    border-radius: 50%;
 }
 
 .option input:disabled+span {
-	cursor: not-allowed;
-	color: var(--mono-50);
-	text-decoration: line-through;
+    cursor: not-allowed;
+    color: var(--mono-50);
+    text-decoration: line-through;
 }
 
 .option input:disabled+span::before,
 .option input:disabled+span::after {
-	background-color: var(--mono-10);
+    background-color: var(--mono-10);
 }
 
 .option.reverse input {
-	right: 0;
+    right: 0;
 }
 
 .option.reverse input[role=switch] {
-	margin-right: 22px;
+    margin-right: 22px;
 }
 
 .option.reverse input+span::before,
 .option:not(.reverse) input+span::after {
-	display: none;
+    display: none;
 }
 
 .option.reverse.w-100 input+span::after {
-	margin-left: auto;
+    margin-left: auto;
 }
 
 .option:hover {
-	color: var(--primary);
+    color: var(--primary);
 }
 
 .option:hover input:not(:checked)+span::before,
 .option:hover input:not(:checked)+span::after {
-	border-color: var(--mono-50);
+    border-color: var(--mono-50);
 }

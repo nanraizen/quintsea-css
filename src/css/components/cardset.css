@@ -1,14 +1,14 @@
 .card {
     padding: 20px 24px;
     background-color: var(--card);
-    border: var(--stroke) solid var(--mono-30);
+    border: var(--card-stroke) solid var(--mono-30);
     border-radius: var(--radius-lg);
 }
 
 .cardset {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    border: var(--stroke) solid var(--mono-30);
+    border: var(--card-stroke) solid var(--mono-30);
     border-radius: var(--radius-lg);
 }
 
@@ -23,7 +23,7 @@
 }
 
 .cardset .card:nth-child(n+2) {
-    border-top-width: var(--stroke);
+    border-top-width: var(--card-stroke);
 }
 
 .cardset .card:first-child {
@@ -62,20 +62,19 @@
     flex: 1;
 }
 
-.cardset.hover .card:hover {
+.cardset.hover:not([class*=gap-]) .card:hover {
     background-color: var(--mono-05);
 }
 
 .cardset[class*=gap-] .card {
     margin: 0 !important;
     transition: var(--ease);
-    border-width: var(--stroke);
+    border-width: var(--card-stroke);
     border-radius: var(--radius-lg);
 }
 
 .cardset[class*=gap-].hover .card:hover {
-    box-shadow: 0 0 0 var(--stroke) inset var(--primary);
-    background-color: unset;
+    box-shadow: 0 0 0 var(--card-stroke) inset var(--primary);
     border-color: var(--primary);
 }
 

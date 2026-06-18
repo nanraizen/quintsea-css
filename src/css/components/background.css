@@ -1,5 +1,4 @@
 [class*=bg-] {
-    background-color: var(--color) !important;
     background-repeat: repeat;
     background-position: center;
 }

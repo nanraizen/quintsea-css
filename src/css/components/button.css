@@ -13,7 +13,7 @@
     border-radius: var(--radius-md);
     font-size: var(--font-size-md);
     line-height: 1.4;
-    color: var(--text-reverse) !important;
+    color: var(--text-btn) !important;
     text-decoration: none !important;
 }
 
@@ -33,7 +33,7 @@
     right: 0;
     opacity: 0;
     transition: box-shadow var(--ease), opacity var(--ease);
-    border: var(--stroke) solid transparent;
+    border: var(--btn-stroke) solid transparent;
     border-radius: inherit;
 }
 
@@ -50,7 +50,7 @@
 .btn img,
 .btn svg {
     width: auto;
-    height: 24px;
+    height: 22px;
 }
 
 .btn span b,
@@ -267,24 +267,24 @@
 }
 
 .btn.btn-o {
-    padding-right: calc(var(--btn-padding-x) - var(--stroke));
-    padding-left: calc(var(--btn-padding-x) - var(--stroke));
+    padding-right: calc(var(--btn-padding-x) - var(--btn-stroke));
+    padding-left: calc(var(--btn-padding-x) - var(--btn-stroke));
     background-color: transparent;
-    border: var(--stroke) solid transparent;
+    border: var(--btn-stroke) solid transparent;
     border-color: var(--color);
-    color: var(--color-darker) !important;
+    color: var(--color-dark) !important;
 }
 
 .btn.btn-o:hover {
-    background-color: var(--color-10);
+    background-color: var(--color-20);
 }
 
 .btn.btn-o::before {
     box-shadow: 0 0 0 0 inset var(--color);
-    top: calc(var(--stroke) * -1);
-    bottom: calc(var(--stroke) * -1);
-    left: calc(var(--stroke) * -1);
-    right: calc(var(--stroke) * -1);
+    top: calc(var(--btn-stroke) * -1);
+    bottom: calc(var(--btn-stroke) * -1);
+    left: calc(var(--btn-stroke) * -1);
+    right: calc(var(--btn-stroke) * -1);
     opacity: 1;
     background-color: transparent;
 }
@@ -328,6 +328,18 @@
     color: var(--color) !important;
 }
 
+.btn.btn-u {
+    --btn-padding-x: 0;
+    background-color: transparent;
+    border-bottom: var(--btn-stroke) solid transparent;
+    border-radius: 0;
+    color: var(--color-dark) !important;
+}
+
+.btn.btn-u:hover {
+    border-color: var(--color);
+}
+
 .btn.default {
     color: var(--text) !important;
 }
@@ -354,7 +366,7 @@
 
 .btn.brand.btn-l::before {
     background-color: transparent;
-    border: var(--stroke) solid currentColor;
+    border: var(--btn-stroke) solid currentColor;
 }
 
 .btn.brand.btn-l:hover::before {

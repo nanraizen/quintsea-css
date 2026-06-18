@@ -25,36 +25,36 @@
     overflow: hidden;
 }
 
-.flow-x {
+.overflow-xa {
     overflow-x: auto;
 }
 
-.x-center {
+.h-center {
     justify-content: center !important;
 }
 
-.x-left {
+.h-left {
     justify-content: start !important;
 }
 
-.x-right {
+.h-right {
     justify-content: end !important;
 }
 
-.x-fluid>* {
+.h-fluid>* {
     flex: 1;
     max-width: unset;
 }
 
-.y-center {
+.v-center {
     align-items: center !important;
 }
 
-.y-start {
+.v-start {
     align-items: start !important;
 }
 
-.y-end {
+.v-end {
     align-items: end !important;
 }
 
@@ -75,9 +75,9 @@
 }
 
 .block {
-    display: block;
+    display: block !important;
 }
 
 .inline {
-    display: inline;
+    display: inline !important;
 }

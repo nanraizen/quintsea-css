@@ -1,6 +1,11 @@
 .color:not(.hover),
 .color.hover:hover {
-    color: var(--color);
+    color: var(--color-dark) !important;
+}
+
+.color-sns:not(.hover),
+.color-sns.hover:hover {
+    color: var(--color) !important;
 }
 
 .font-1 {

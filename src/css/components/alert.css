@@ -4,7 +4,7 @@
     gap: 24px;
     position: relative;
     padding: 20px 24px;
-    border: var(--stroke) solid var(--color);
+    border: 1px solid var(--color);
     border-radius: var(--radius-md);
     line-height: 1.75;
 }

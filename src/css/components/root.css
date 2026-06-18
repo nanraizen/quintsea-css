@@ -9,8 +9,12 @@
     --font-size: 16px;
     --font-size-md: 14px;
     --font-size-sm: 12px;
-    --stroke: 1px;
-    --stroke-focus: 1px;
+    --hr: 1px;
+    --card-stroke: 1px;
+    --input-stroke: 1px;
+    --input-stroke-focus: 1px;
+    --table-stroke: 1px;
+    --btn-stroke: 1px;
     --container: 1000px;
     --container-padding: 36px;
     --btn-height: 48px;
@@ -52,7 +56,7 @@
     --dropdown: var(--mono-00);
     --text: #3A3C42;
     --text-reverse: #FCFAFB;
-    --text2-reverse: #FFFFFF;
+    --text-btn: #FCFAFB;
     --odd: var(--mono-10);
     --white: #FCFAFB;
     --white-10: #FCFAFB0D;
@@ -149,8 +153,8 @@
     --dark-20: #3A3C4215;
     --dark-30: #3A3C423F;
     --dark-40: #3A3C424C;
-    --stroke-color: var(--mono-40);
-    --stroke-color-hover: var(--mono-50);
+    --input-stroke-color: var(--mono-40);
+    --input-stroke-color-hover: var(--mono-50);
     --icon-caret: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="%237C7C7D"><path d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z"/></svg>');
     --icon-plus: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="%237C7C7D"><path d="M480-120q-17 0-28.5-11.5T440-160v-280H160q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h280v-280q0-17 11.5-28.5T480-840q17 0 28.5 11.5T520-800v280h280q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440H520v280q0 17-11.5 28.5T480-120Z"/></svg>');
     --icon-check: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="%233A3C42"><path d="m400-449 220-219q18-18 44-18t44 18q18 18 18 44t-18 44L445-316q-19 19-45 19t-45-19L252-420q-18-18-18-44t18-44q18-18 44-18t44 18l60 59Z"/></svg>');

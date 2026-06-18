@@ -86,7 +86,7 @@
 }
 
 .accordion .cardset [data-accordion=content] .card:first-child {
-    border-top-width: var(--stroke);
+    border-top-width: var(--table-stroke);
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
