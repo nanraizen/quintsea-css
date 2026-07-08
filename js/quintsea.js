@@ -1,5 +1,5 @@
 /*!
- * Quintsea CSS v0.5.5 (https://quintsea.nanraizen.me)
+ * Quintsea CSS v0.5.7 (https://quintsea.nanraizen.me)
  * (c) 2025-2026 | MIT License
  */
 document.addEventListener("DOMContentLoaded", () => {
@@ -11,13 +11,13 @@ document.addEventListener("DOMContentLoaded", () => {
     navigator.clipboard.writeText(e).then(() => {
       const a = document.createElement("div");
       a.className = "copy-notif";
-      const n = document.createElement("span");
+      const c = document.createElement("span");
       if (o && o.classList.contains("text-copied")) {
-        n.textContent = "Copied: ";
+        c.textContent = "Copied: ";
         const t = document.createElement("u");
-        t.textContent = e, n.appendChild(t);
-      } else n.textContent = "Copied to Clipboard";
-      a.appendChild(n), document.body.appendChild(a), setTimeout(() => a.classList.add("show"), 100), 
+        t.textContent = e, c.appendChild(t);
+      } else c.textContent = "Copied to Clipboard";
+      a.appendChild(c), document.body.appendChild(a), setTimeout(() => a.classList.add("show"), 100), 
       setTimeout(() => {
         a.classList.remove("show"), setTimeout(() => a.remove(), 500);
       }, 2e3), !t || "INPUT" !== t.tagName && "TEXTAREA" !== t.tagName || (t.focus(), 
@@ -51,16 +51,16 @@ document.addEventListener("DOMContentLoaded", () => {
       const o = document.createElement("p");
       o.className = "range-value", e.appendChild(o);
       const a = () => {
-        const e = +t.min || 0, a = +t.max || 100, n = +t.value, c = (n - e) / (a - e) * (t.offsetWidth - 16) + 8;
-        o.textContent = n, o.style.left = c + "px";
+        const e = +t.min || 0, a = +t.max || 100, c = +t.value, n = (c - e) / (a - e) * (t.offsetWidth - 16) + 8;
+        o.textContent = c, o.style.left = n + "px";
       };
       t.addEventListener("input", a), a();
     }
   }), document.querySelectorAll(".navbar.sticky").forEach(e => {
     const t = e.parentElement, o = document.createElement("div");
     function a() {
-      const a = window.scrollY, n = e.offsetHeight, c = t.offsetTop, l = t.offsetHeight;
-      a > c && a + n < c + l ? (e.classList.add("fix"), e.classList.remove("end"), o.style.display = "block") : a + n >= c + l ? (e.classList.remove("fix"), 
+      const a = window.scrollY, c = e.offsetHeight, n = t.offsetTop, l = t.offsetHeight;
+      a > n && a + c < n + l ? (e.classList.add("fix"), e.classList.remove("end"), o.style.display = "block") : a + c >= n + l ? (e.classList.remove("fix"), 
       e.classList.add("end"), o.style.display = "block") : (e.classList.remove("fix", "end"), 
       o.style.display = "none");
     }
@@ -92,18 +92,18 @@ document.addEventListener("DOMContentLoaded", () => {
   }), document.querySelectorAll(".navtabs[data-tab-name]").forEach(e => {
     const t = document.querySelector('.navtabs-content[data-tab-name="' + e.getAttribute("data-tab-name") + '"]'), o = Array.from(e.children), a = Array.from(t.children);
     if (!t) return;
-    const n = e => {
+    const c = e => {
       o.forEach(e => e.classList.remove("active")), e.classList.add("active"), a.forEach(e => e.classList.remove("active"));
-      const n = e.getAttribute("href").substring(1), c = t.querySelector("#" + n);
-      c && c.classList.add("active");
+      const c = e.getAttribute("href").substring(1), n = t.querySelector("#" + c);
+      n && n.classList.add("active");
     };
     o.forEach(e => {
       e.addEventListener("click", t => {
-        t.preventDefault(), n(e);
+        t.preventDefault(), c(e);
       });
     });
-    const c = o.find(e => e.classList.contains("active")) || o[0];
-    c && n(c);
+    const n = o.find(e => e.classList.contains("active")) || o[0];
+    n && c(n);
   }), document.querySelectorAll('[data-modal="content"]').forEach(e => {
     if (e.querySelector(".modal-card")) return;
     const t = document.createElement("div"), o = document.createElement("div"), a = e.getAttribute("data-modal-size");
@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }), document.querySelectorAll('[data-modal="toggle"]').forEach(e => {
     e.addEventListener("click", t => {
       t.preventDefault();
-      const o = e.getAttribute("href").substring(1), a = document.getElementById(o);
+      const o = e.getAttribute("href").slice(1).replace(/^[#?]/, "").split(/[=?]/)[0], a = document.getElementById(o);
       a && a.classList.toggle("open");
     });
   }), document.querySelectorAll('[data-modal="close"]').forEach(e => {
@@ -141,12 +141,12 @@ document.addEventListener("DOMContentLoaded", () => {
       a || (a = document.createElement("div"), a.className = "tooltip-text", a.textContent = e.getAttribute("data-tooltip-text"), 
       e.appendChild(a), a.offsetHeight), a.classList.add("show");
     }), e.addEventListener("mouseleave", () => {
-      const a = e.querySelector(".tooltip-text"), n = a && a.textContent.startsWith("Copied");
+      const a = e.querySelector(".tooltip-text"), c = a && a.textContent.startsWith("Copied");
       a && (o = setTimeout(() => {
         a.classList.remove("show"), t = setTimeout(() => {
           a.remove();
         }, 150);
-      }, n ? 1500 : 0));
+      }, c ? 1500 : 0));
     });
   }), document.querySelectorAll(".copyBtn").forEach(e => {
     const t = e.getAttribute("data-copy-text") || "";
@@ -171,26 +171,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const o = e.getAttribute("data-copy-text") || "";
     e.addEventListener("click", () => t(o, null, e));
   });
-  const o = document.documentElement, a = document.querySelectorAll("[data-theme-trigger]"), n = window.matchMedia("(prefers-color-scheme: dark)");
-  function c(e) {
+  const o = document.documentElement, a = document.querySelectorAll("[data-theme-trigger]"), c = window.matchMedia("(prefers-color-scheme: dark)");
+  function n(e) {
     let t = e;
     if ("light" === e) o.setAttribute("data-theme", "light"); else if ("dark" === e) o.setAttribute("data-theme", "dark"); else {
-      const e = n.matches ? "dark" : "light";
+      const e = c.matches ? "dark" : "light";
       o.setAttribute("data-theme", e), t = "system";
     }
     a.forEach(e => {
       e.classList.toggle("active", e.dataset.themeTrigger === t);
     });
   }
-  c(localStorage.getItem("theme") || "system"), a.forEach(e => {
+  n(localStorage.getItem("theme") || "system"), a.forEach(e => {
     e.addEventListener("click", () => {
       const t = e.dataset.themeTrigger;
       if ("toggle" === t) {
-        const e = "dark" === (o.getAttribute("data-theme") || (n.matches ? "dark" : "light")) ? "light" : "dark";
-        localStorage.setItem("theme", e), c(e);
-      } else localStorage.setItem("theme", t), c(t);
+        const e = "dark" === (o.getAttribute("data-theme") || (c.matches ? "dark" : "light")) ? "light" : "dark";
+        localStorage.setItem("theme", e), n(e);
+      } else localStorage.setItem("theme", t), n(t);
     });
-  }), n.addEventListener("change", () => {
-    "system" === localStorage.getItem("theme") && c("system");
+  }), c.addEventListener("change", () => {
+    "system" === localStorage.getItem("theme") && n("system");
   });
 });

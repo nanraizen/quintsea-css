@@ -87,10 +87,14 @@
     border-radius: var(--radius-md);
 }
 
-.cardset.thumbnail .card .img-th+* {
-    margin-top: 24px;
+.cardset.thumbnail .card .img-th+.card-title {
+    padding: 22px 0;
 }
 
-.cardset.thumbnail .card.flex .img-th+* {
-    margin-top: unset;
+.cardset.thumbnail .card .img-th+.card-title .card-caption {
+    margin-top: 8px;
+}
+
+.cardset.thumbnail .card.flex-v .img-th+.card-title+.card-meta {
+    margin-top: auto;
 }

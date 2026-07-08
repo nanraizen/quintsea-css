@@ -226,7 +226,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		btn.addEventListener('click', e => {
 			e.preventDefault();
 
-			const target = btn.getAttribute('href').substring(1);
+			const href = btn.getAttribute('href').slice(1);
+			const target = href.replace(/^[#?]/, '').split(/[=?]/)[0];
 			const modal = document.getElementById(target);
 
 			if (!modal) return;

@@ -4,6 +4,7 @@ table {
     max-width: 100%;
     border: 0;
     font-size: var(--font-size-md);
+    font-family: var(--font-1);
     line-height: 1.75;
 }
 

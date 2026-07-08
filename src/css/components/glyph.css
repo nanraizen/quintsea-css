@@ -61,4 +61,5 @@
 
 .glyph.emoji {
     font-size: 20px;
+    font-family: var(--font-1);
 }

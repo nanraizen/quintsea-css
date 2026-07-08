@@ -1,5 +1,5 @@
 /*!
- * Quintsea CSS v0.5.5 (https://quintsea.nanraizen.me)
+ * Quintsea CSS v0.5.7 (https://quintsea.nanraizen.me)
  * (c) 2025-2026 | MIT License
  */
 !function(e, t) {
@@ -117,7 +117,7 @@
     }), document.querySelectorAll('[data-modal="toggle"]').forEach(e => {
       e.addEventListener("click", t => {
         t.preventDefault();
-        const o = e.getAttribute("href").substring(1), a = document.getElementById(o);
+        const o = e.getAttribute("href").slice(1).replace(/^[#?]/, "").split(/[=?]/)[0], a = document.getElementById(o);
         a && a.classList.toggle("open");
       });
     }), document.querySelectorAll('[data-modal="close"]').forEach(e => {
